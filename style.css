@@ -254,7 +254,7 @@ h1{
 .promo{
     width: 100%;
     height: 50vh;
-    background: fixed url(./images/fondo\ card.png) center ;
+    background: fixed url(./images/fondo-card-1.png) center ;
     background-size: cover;
     display: flex;
     align-items: center;
