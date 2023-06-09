@@ -1,0 +1,18 @@
+{
+  "name": "microfixec",
+  "version": "1.0.0",
+  "description": "E commerce",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Danny_Joy1",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "googleapis": "^105.0.0"
+  }
+}
