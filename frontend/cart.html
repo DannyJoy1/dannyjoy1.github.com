@@ -12,27 +12,31 @@
 </head>
 
 <body id="cart-body" class="cart-body">
-    <header class="shop-header">
+    <header class="header">
 
         <a class="brand" href="./index.html">
             <img src="./images/logo.png" alt="logo" class="logo">
         </a>
+    
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+          </form>
 
-        <!-- <div class="nav"> -->
+        <div class="nav"> 
         <ul id="nav-bar" class="nav-bar">
-            <li><a href="./index.html">Home</a></li>
             <li><a href="./shop.html">Tienda</a></li>
             <li><a href="./about.html">Sobre Nosotros</a></li>
+            <li><a href="#servicios">Ingresar</a></li>
             <li><a href="./contact.html">Contacto</a></li>
-            <li><a href="/#/signin">Ingresar</a></li>
-            <li id="lg-bag"><a  class="active" href="./cart.html"><i class="fas fa-shopping-bag"></i></a></li>
-            <a href="/#/" id="close"><i class="fas fa-times"></i></a>
+            <a id="close"><i class="fas fa-times"></i></a>
         </ul>
+        <a id="cart-btn" ><i id="checkout" onClick="goToCart()" class="carrito fas fa-shopping-bag"></i></a>
+        </div>
 
 
 
         <div class="mobile">
-            <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
 
             <i id="bar-icon" class=" fas fa-bars"></i>
 
@@ -46,6 +50,7 @@
             <!-- <img src="/images/logo-2.png" alt="logo" class="hero-img"> -->
 
             <h2>Carrito </h2>
+            <h3>Por favor completa los datos de Envio antes de confirmar la orden para que un asesor se pueda contactar contigo</h3>
 
         </div>
 
@@ -61,35 +66,51 @@
                         <td>Subtotal</td>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="/#/"><i class="far fa-times-circle"></i></a></td>
-                        <td><img src="./products/ssd-k-250gb.png" alt="ssd 250gb"></td>
-                        <td>SSD Kingston 250GB M.2 NVMe</td>
-                        <td>$25</td>
-                        <td><input type="number" value="1"></td>
-                        <td>$25</td>
-                    </tr>
+                <tbody id="order-table">
 
-                    <tr>
-                        <td><a href="/#/"><i class="far fa-times-circle"></i></a></td>
-                        <td><img src="./products/ssd-k-250gb.png" alt="ssd 250gb"></td>
-                        <td>SSD Kingston 250GB M.2 NVMe</td>
-                        <td>$25</td>
-                        <td><input type="number" value="1"></td>
-                        <td>$25</td>
-                    </tr>
-
-                    <tr>
-                        <td><a href="/#/"><i class="far fa-times-circle"></i></a></td>
-                        <td><img src="./products/ssd-k-250gb.png" alt="ssd 250gb"></td>
-                        <td>SSD Kingston 250GB M.2 NVMe</td>
-                        <td>$25</td>
-                        <td><input type="number" value="1"></td>
-                        <td>$25</td>
-                    </tr>
                 </tbody>
             </table>
+        </div>
+
+        <div id="delivery-form" class="delivery-form">
+            <h3>Datos de Envío</h3>
+            <div class="delivery-form-g">
+                <label for="name">Nombre:</label>
+                <input type="text" name="name" id="name" placeholder="Nombre completo">
+            </div>
+            <div class="delivery-form-g">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="delivery-form-g">
+                <label for="tel">Teléfono :</label>
+                <input type="text" name="tel" id="tel" placeholder="Celular">
+            </div>
+            <div class="delivery-form-g">
+                <label for="province">Provincia:</label>
+                <input type="text" name="province" id="province" placeholder="Provincia">
+            </div>
+            <div class="delivery-form-g">
+                <label for="city">Ciudad:</label>
+                <input type="text" name="city" id="city" placeholder="Ciudad">
+            </div>
+            <div class="delivery-form-g">
+                <label for="address1">Calle Principal:</label>
+                <input type="text" name="address1" id="address1" placeholder="Calle Principal">
+            </div>
+            <div class="delivery-form-g">
+                <label for="address2">Calle Secundaria:</label>
+                <input type="text" name="address2" id="address2" placeholder="Calle Secundaria">
+            </div>
+            <div class="delivery-form-g">
+                <label for="postal">Codigo Postal:</label>
+                <input type="number" name="postal" id="postal" placeholder="Código Postal">
+            </div>
+
+            <!-- <button class="normal delivery-btn"> Confirmar</button> -->
+
+
+
         </div>
 
         <div class="cart-add" id="cart-add">
@@ -97,7 +118,7 @@
                 <h3>Aplicar Cupón</h3>
                 <div>
                     <input type="text" placeholder="Ingresa tu Cupón">
-                    <button class="normal" >Aplicar</button>
+                    <button class="normal">Aplicar</button>
                 </div>
 
             </div>
@@ -105,27 +126,45 @@
             <div class="subtotal" id="subtotal">
                 <h3>Total del Carrito</h3>
                 <table>
-                    <tr>
-                        <td>Subtotal del Carrito</td>
-                        <td>$75</td>
+                    <!-- <tr>
+                        <td>Subtotal</td>
+                        <td id="order-subtotal"></td>
                     </tr>
                     <tr>
                         <td>
-                           Envío 
+                            Envío
                         </td>
-                        <td>Gratis</td>
-                    </tr>
+                        <td id="order-delivery">Gratis</td>
+                    </tr> -->
                     <tr>
                         <td><strong>Total</strong></td>
-                        <td><strong>$75</strong></td>
+                        <td><strong id="order-total"></strong></td>
                     </tr>
                 </table>
-                <button class="normal">Proceder al pago</button>
+                <div class="select-btn">
+                    <button  id="checkout" onClick="pay()" class="normal checkout-btn">Confirmar y pagar</button>
+                    <div id="confirm-text" class="">
+                        <p>Al presionar confirmar, la orden de compra se guardará en el sistema y no podrás modificar la orden o los datos de envío.</p>
+                    </div>
+                    
+
+                </div>
             </div>
+            <div id="mensaje" class="mensaje oculto">
+                <img src="/images/logo.png" alt="logo">
+              <p>Gracias por tu compra. En breve uno de nuestros asesores se pondrá en contacto contigo.</p>  
+                <a href="./index.html" class="back-btn">Ir al Home</a>
+            </div>
+
+
+
+
         </div>
 
 
-        
+
+
+
 
 
 

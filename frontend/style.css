@@ -36,8 +36,8 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid var(--main-color);
-    /* position: sticky;
-    top: 0; */
+     position: sticky;
+    top: 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     padding: 0 2rem;
     z-index: 4;
@@ -89,6 +89,7 @@ header {
 .mobile {
     display: none;
     align-items: center;
+    cursor: pointer;
 
 }
 
@@ -103,8 +104,105 @@ header {
 
 }
 
+.nav{
+display: flex;
 
+}
 
+.carrito{
+    color: white;
+font-size: 2.5rem;
+text-decoration: none;
+cursor: pointer;
+
+    
+}
+
+.carrito:hover{
+    color: #5cc1af;
+}
+#searchForm{
+    height: 35px;
+    width: 20%;
+    border: 1px solid #808080 ;
+    border-radius: 5px;
+    padding: 5px 0 5px 10px;
+    background: #333333;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+    display: flex;
+}
+
+#searchInput{
+    width: calc(100% - 29px);
+    height: 100%;
+    border: 0;
+    border-color: transparent;
+    font-size: 1rem;
+    padding-right: 0px;
+    color: #cccccc;
+    background: #333333;
+    border-right: 2px solid #808080;
+    outline: none;
+
+}
+
+#searchInput::-webkit-input-placeholder{
+    color: white;
+}
+
+#searchInput::-moz-input-placeholder {
+    color: white;
+  }
+  
+#searchInput::-ms-input-placeholder {
+    color: white;
+  }
+
+  #searchInput:focus::-webkit-input-placeholder {
+    color: #5cc1af
+  }
+  
+  #searchInput:focus::-moz-input-placeholder {
+    color: #5cc1af
+  }
+  
+  #searchInput:focus::-ms-input-placeholder {
+    color: #5cc1af
+  }
+  
+  .search-box-icon {
+    width: 52px;
+    height: 35px;
+    top: -6px;
+    position: relative;
+    
+    background: transparent;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+  }
+  .search-box-icon:hover {
+    background: #5cc1af;
+  }
+
+  .btn-icon-content {
+    width: 52px;
+    height: 35px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius:5px;
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+  }
+  .search-icon {
+    width: 21px;
+    height: 21px;
+    top: 7px;
+    right: 15px;
+    position: absolute;
+  }
 
 .hero {
     /* height: 90vh; */
@@ -121,13 +219,13 @@ header {
 
 }
 
-/* 
-.hero-img{
-    filter: blur(1.5rem);
+#searchResults{
     display: flex;
-    position: absolute;
-    z-index: -1;
-} */
+    flex-wrap: wrap;
+    margin: 4rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 .hero-card {
     height: 90%;
@@ -419,7 +517,7 @@ h1 {
 
 .card {
     width: 30rem;
-    height: 40rem;
+    /* height: 40rem; */
     padding: .8em;
     background: #f5f5f5;
     position: relative;
@@ -506,6 +604,10 @@ svg {
 
 .productos {
     padding: 3rem;
+}
+
+.more-btn{
+    text-decoration: none;
 }
 
 /*------------------------------------------*/
@@ -1343,10 +1445,12 @@ color: white;
     border: 2px solid #5cc1af;
 }
 
-.cupon button, .subtotal button{
+.cupon button, .subtotal button, .back-btn{
     background-color: #5cc1af;
     color: white;
     padding: 12px 20px;
+    border: 1.8px solid ;
+    text-decoration: none;
 }
 
 .subtotal{
@@ -1354,6 +1458,7 @@ color: white;
     margin-bottom: 30px;
     border: 2px solid #5cc1af;
     padding: 30px ;
+    
 }
 
 .subtotal table{
@@ -1373,6 +1478,116 @@ color: white;
     height: 200px;
 }
 
+.delivery-form{
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: auto;
+    width: 500px;
+    background-color: #3a3d40;
+    padding: 3rem;
+    border-radius: 15px;
+    color: white;
+
+}
+
+.delivery-form h3{
+    text-align: center;
+    color: #5cc1af;
+}
+.delivery-form label{
+    font-weight: bold;
+    color: white;
+    font-size: 1.4rem;
+}
+.delivery-form {
+    font-weight: bold;
+}
+
+.delivery-form-g{
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-form-g input{
+padding: .6rem;
+background-color: transparent;
+border-radius: 8px;
+margin: 1rem 0 2rem 0;
+background-color: #93a29f5e;
+}
+
+.delivery-form-g input::placeholder{
+color: rgba(183, 179, 179, 0.94);
+}
+
+.subtotal button:hover{
+    background-color: var(--secondary-color);
+    color: white;
+    
+}
+.subtotal button{
+    margin: 0 auto;
+}
+
+#confirm-text {
+    padding: 10px;
+  }
+
+  .select-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .mensaje {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+     transform: translate(-50%, -50%); 
+    background-color: #3a3d40;
+    padding: 20px;
+    border: 4px solid var(--main-color) ;
+    border-radius: 15px;
+    z-index: 9999;
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+
+
+  }
+.mensaje img{
+    width: 100%;
+    margin: 2rem;
+}
+.mensaje p{
+    font-size: 3.5rem;
+    margin: 0 auto;
+    text-align: center;
+}
+  .mensaje a{
+    margin: 2rem auto;
+    border-radius: 10px;
+
+  }
+  .mensaje a:hover{
+    background-color: var(--secondary-color);
+
+  }
+  
+  .oculto {
+    display: none;
+  }
+  
+
+  .visible {
+    display: flex;
+  }
+
 
 /***********************/
 
@@ -1380,7 +1595,11 @@ color: white;
 
 
 
-@media (max-width: 799px) {
+@media (max-width: 850px) {
+    .logo {
+        height: 4rem;
+
+    }
     .nav-bar {
         display: flex;
         flex-direction: column;
@@ -1427,9 +1646,7 @@ color: white;
 
     }
 
-    #lg-bag {
-        display: none;
-    }
+   
 
     .logo {
         height: 6rem;
@@ -1587,6 +1804,21 @@ color: white;
 
 @media (max-width: 360px) {
 
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #3a3d40;
+        box-shadow: 0 40px 60px rgb(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
 
     .banner h3 {
         font-size: 1.2rem;

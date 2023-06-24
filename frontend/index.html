@@ -14,25 +14,46 @@
 <body>
     <header class="header">
 
-        <a class="brand" href="#">
+        <a class="brand" href="./index.html">
             <img src="./images/logo.png" alt="logo" class="logo">
         </a>
 
-        <!-- <div class="nav"> -->
-        <ul id="nav-bar" class="nav-bar">
-            <li><a class="active" href="./index.html">Home</a></li>
-            <li><a href="./shop.html">Tienda</a></li>
-            <li><a href="./about.html">Sobre Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="./contact.html">Contacto</a></li>
-            <li id="lg-bag"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
-            <a href="/#/" id="close"><i class="fas fa-times"></i></a>
-        </ul>
+
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Buscar...">
+            <button class="search-box-icon btn-icon-content" type="submit"><i class="search-icon">
+                    <svg xmlns="://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+                        <path class="icon-search"
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                            fill="#fff"></path>
+                    </svg>
+                </i></button>
+        </form>
+
+
+
+        <a id="cart-btn"><i id="checkout" onClick="goToCart()" class="carrito fas fa-shopping-bag"></i></a>
+
+       
+
+        <div class="nav">
+
+            
+            <ul id="nav-bar" class="nav-bar">
+                
+                <li><a href="./shop.html">Tienda</a></li>
+                <li><a href="./about.html">Sobre Nosotros</a></li>
+                <li><a href="./contact.html">Contacto</a></li>
+                <a id="close"><i class="fas fa-times"></i></a>
+                
+            </ul>
+        
+        
+        </div>
 
 
 
         <div class="mobile">
-            <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
 
             <i id="bar-icon" class=" fas fa-bars"></i>
 
@@ -64,12 +85,18 @@
             </div>
         </div>
 
+        
+            <div id="searchResults"></div>
+        
+        
 
         <div class="productos">
             <h2 class="prod-title">
-                Productos Destacados
+                Productos
             </h2>
             <!-- --------------------------------------------- -->
+
+           
 
             <div id="featured-products" class="product-cards">
 
@@ -78,14 +105,14 @@
             </div>
 
 
-            <button id="checkout" class="normal pay-btn" onClick="pay()">Pagar</button>
-       
+            <a class="more-btn" href="./shop.html"> <button class="normal pay-btn">Más</button></a>
+
         </div>
 
         <div class="banner">
             <h3>Somos tus socios mayoristas</h3>
             <h2>¡Recibe un <span>descuento</span> exclusivo por compras a partir de 3 unidades! </h2>
-            <button class="normal">Comprar</button>
+            <a href="./shop.html"> <button class="normal">Comprar</button></a>
 
         </div>
 
