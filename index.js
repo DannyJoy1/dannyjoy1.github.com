@@ -31,40 +31,6 @@ app.get('/api/products', async (req, res) => {
   res.send(await repository.read());
 });
 
-// app.post("/api/pay", async (req, res) => {
-//   const order = req.body;
-//   const ids = order.items.map(p => p.id);
-//   const productsCopy = await repository.read();
-
-//   let error = false;
-//   ids.forEach((id) => {
-//     const product = productsCopy.find((p) => p.id === id);
-//     if (product.stock > 0) {
-//       product.stock--;
-//     } else {
-//       error = true;
-//     }
-//   });
-
-//   if (error) {
-//     res.send("Sin stock").statusCode(400);
-//   } else {
-//     await repository.write(productsCopy);
-
-//     // guardar datos en shipping
-//     order.date = new Date().toISOString();
-//     order.status = "pendiente";
-//     const orders = [order]; // Solo la orden actual, ya que no estás leyendo las órdenes existentes
-//     await repository.writeOrders(orders);
-
-
-
-
-//     res.send(productsCopy);
-//   }
-// });
-
-/********************** */
 app.post("/api/pay", async (req, res) => {
   const order = req.body;
   const items = order.items; // Obtener los productos del carrito

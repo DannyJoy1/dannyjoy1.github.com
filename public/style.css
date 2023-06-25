@@ -211,7 +211,7 @@ cursor: pointer;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-image: url(./images/hero.png);
+    background-image: url('./images/shop-banner.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
