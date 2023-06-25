@@ -2,6 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const repository = require('./repository');
 
+///////////
+const path = require('path');
+
+/////////////
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -95,7 +100,13 @@ app.post("/api/pay", async (req, res) => {
   }
 });
 
-app.use("/", express.static("/frontend"));
+app.use(express.static(path.join(__dirname, 'frontend')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+
+///app.use("/", express.static("/frontend"));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
