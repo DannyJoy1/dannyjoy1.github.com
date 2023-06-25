@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const repository = require('./repository');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -95,7 +95,7 @@ app.post("/api/pay", async (req, res) => {
   }
 });
 
-app.use("./", express.static("./frontend"));
+app.use("/", express.static("frontend"));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
