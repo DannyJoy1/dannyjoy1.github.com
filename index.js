@@ -100,13 +100,13 @@ app.post("/api/pay", async (req, res) => {
   }
 });
 
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html', 'style.css'));
+});
 
-app.use("/", express.static("public"));
+//app.use("/", express.static("public"));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
