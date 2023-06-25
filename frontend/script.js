@@ -175,7 +175,7 @@ function displayProducts() {
 
       productsHTML +=
         `<div class="card">
-            <a href="./sproduct.html" class="product-cart-link">
+            <a href="/sproduct.html" class="product-cart-link">
                 <img class="card-img" src="${p.image}" alt="">
                 <div class="card-info">
                     <p class="text-title">${p.name}</p>
@@ -226,7 +226,7 @@ searchForm.addEventListener('submit', async (event) => {
         productElement.innerHTML =
           `
         <div class="card">
-        <a href="./sproduct.html" class="product-cart-link">
+        <a href="/sproduct.html" class="product-cart-link">
             <img class="card-img" src="${product.image}" alt="${product.name}">
             <div class="card-info">
                 <p class="text-title">${product.name}</p>
