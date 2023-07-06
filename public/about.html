@@ -12,40 +12,42 @@
 </head>
 
 <body class="about-body">
-    <header class="shop-header">
+    <header class="header">
 
-        <a class="brand" href="./index.html">
+        <a class="brand" href="/index.html">
             <img src="./images/logo.png" alt="logo" class="logo">
         </a>
+        <a id="cart-btn"><i id="checkout" onClick="goToCart()" class="carrito fas fa-shopping-bag"></i></a>
 
-        <!-- <div class="nav"> -->
-        <ul id="nav-bar" class="nav-bar">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./shop.html">Tienda</a></li>
-            <li><a class="active" href="./about.html">Sobre Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="./contact.html">Contacto</a></li>
-            <li id="lg-bag"><a href="./cart.html"><i class="fas fa-shopping-bag"></i></a></li>
-            <a href="/#/" id="close"><i class="fas fa-times"></i></a>
-        </ul>
+        <div class="nav">
+
+
+            <ul id="nav-bar" class="nav-bar">
+
+                <li><a href="/index.html#featured-products">Productos</a></li>
+                <li><a href="/about.html">Sobre Nosotros</a></li>
+                <li><a href="/contact.html">Contacto</a></li>
+                <a id="close"><i class="fas fa-times"></i></a>
+
+            </ul>
+
+
+        </div>
 
 
 
         <div class="mobile">
-            <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
 
             <i id="bar-icon" class=" fas fa-bars"></i>
 
         </div>
 
-        <!-- </div> -->
     </header>
 
     <main class="about-main">
         <div class="about-hero">
-            <!-- <img src="/images/logo-2.png" alt="logo" class="hero-img"> -->
-                
-                    <h2 >Conócenos  </h2>
+
+            <h2>Conócenos </h2>
 
         </div>
 
@@ -53,162 +55,167 @@
             <img class="remove-bg" src="./images/logo-about.png" alt="logo microfix">
             <div>
                 <h2>¿Quiénes Somos?</h2>
-                <p>En Microfix, nuestra historia comienza como el sueño de una pareja de ingenieros en electrónica, apasionados por el mundo de la tecnología y, en particular, por el fascinante universo de las computadoras. Nuestra pasión por la innovación y el deseo de brindar soluciones accesibles a los usuarios nos impulsaron a convertir ese sueño en realidad.
+                <p>En Microfix, nuestra historia comienza como el sueño de una pareja de ingenieros en electrónica,
+                    apasionados por el mundo de la tecnología y, en particular, por el fascinante universo de las
+                    computadoras. Nuestra pasión por la innovación y el deseo de brindar soluciones accesibles a los
+                    usuarios nos impulsaron a convertir ese sueño en realidad.
                     <br><br>
-                    Nacimos con la convicción de que todos los ecuatorianos deberían tener acceso a componentes de PC de calidad sin que ello suponga una carga para sus bolsillos. Nos dimos cuenta de que había una necesidad en el mercado local de contar con una opción confiable y asequible para adquirir componentes de computadoras, y nos propusimos llenar ese vacío.</p>
-                
+                    Nacimos con la convicción de que todos los ecuatorianos deberían tener acceso a componentes de PC de
+                    calidad sin que ello suponga una carga para sus bolsillos. Nos dimos cuenta de que había una
+                    necesidad en el mercado local de contar con una opción confiable y asequible para adquirir
+                    componentes de computadoras, y nos propusimos llenar ese vacío.</p>
+
             </div>
 
-        
-
-
-            
 
         </div>
-        <marquee class="marquee" bgcolor="#5cc1af" loop="-1" scrollamount="5" width="100%">¡Expertos en lo que hacemos!</marquee>
+        <marquee class="marquee" bgcolor="#5cc1af" loop="-1" scrollamount="5" width="100%">¡Expertos en lo que hacemos!
+        </marquee>
 
         <div class="about-cards-page">
             <div class="cardBox">
                 <div class="card-abp">
-                   <div class="h4">Misión</div>
-                 
-                  <div class="content">
-                    <div class="h3">Misión</div>
-                    <p>Proporcionar soluciones tecnológicas de calidad y accesibles que impulsen el potencial de nuestros clientes</p>
-                  </div>
-                </div>
-              </div>
+                    <div class="h4">Misión</div>
 
-              <div class="cardBox">
-                <div class="card-abp">
-                   <div class="h4">Visión</div>
-                 
-                  <div class="content">
-                    <div class="h3">Visión</div>
-                    <p> Ser líderes en el mercado como proveedores de soluciones tecnológicas de confianza.</p>
-                  </div>
-                </div>
-              </div>
-              </div>
-            
-              <div id="servicios" class="servicios-about">
-                <!-- <img class="serv-fondo" src="/images/fondo card.png" alt="fondo gamer"> -->
-                <h2 class="servs">Servicios</h2>
-                <div class="div serv-cards">
-                    <div class="serv-card serv-card-1">
-                        <img src="./images/ahorro.png" alt="img" class="serv-card">
-    
-                        <div class="serv">
-                            <h2 class="asesoria">Componentes de PC al mejor precio</h2>
-                            <p class="serv-text">Los componentes de las marcas mas reconocidas al mejor precio que podrás
-                                encontrar.</p>
-                        </div>
-    
+                    <div class="content">
+                        <div class="h3">Misión</div>
+                        <p>Proporcionar soluciones tecnológicas de calidad y accesibles que impulsen el potencial de
+                            nuestros clientes</p>
                     </div>
-    
-                    <div class="serv-card serv-card-3">
-                        <img src="./images/servicio-tecnico-1.png" alt="" class="serv-card">
-    
-                        <div class="serv">
-    
-                            <h2 class="servicio-tec">
-                                Servicio Técnico
-                            </h2>
-                            <p class="serv-text">Profesionales del mas alto nivel, se encargan de que tus dispositivos
-                                trabajen al 100. </p>
-                        </div>
-    
-                    </div>
-                    <div class="serv-card serv-card-4">
-                        <img src="./images/delivery.png" alt="" class="serv-card">
-                        <div class="serv">
-                            <h2 class="entrega">Entregas a todo el Pais</h2>
-                            <p class="serv-text">Hacemos envios a todo el Ecuador a traves de Servientrega.</p>
-                        </div>
-    
-    
-    
-                    </div>
-                    <div class="serv-card serv-card-5">
-                        <img src="./images/socios.png" alt="" class="serv-card">
-                        <div class="serv">
-                            <h2 class="entrega">Somos tus Proveedores</h2>
-                            <p class="serv-text">Trabaja con nosotros y obten un descuento para distribuidores.</p>
-                        </div>
-                    </div>
-                    <div class="serv-card serv-card-6">
-                        <img src="./images/garantia.png" alt="" class="serv-card">
-    
-                        <div class="serv">
-                            <h2 class="entrega">Garantía</h2>
-                            <p class="serv-text">Todos nuestros prouctos ceuntan con garantía</p>
-                        </div>
-    
-                    </div>
-    
                 </div>
             </div>
-        
+
+            <div class="cardBox">
+                <div class="card-abp">
+                    <div class="h4">Visión</div>
+
+                    <div class="content">
+                        <div class="h3">Visión</div>
+                        <p> Ser líderes en el mercado como proveedores de soluciones tecnológicas de confianza.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="servicios" class="servicios-about">
+            <!-- <img class="serv-fondo" src="/images/fondo card.png" alt="fondo gamer"> -->
+            <h2 class="servs">Servicios</h2>
+            <div class="div serv-cards">
+                <div class="serv-card serv-card-1">
+                    <img src="./images/ahorro.png" alt="img" class="serv-card">
+
+                    <div class="serv">
+                        <h2 class="asesoria">Componentes de PC al mejor precio</h2>
+                        <p class="serv-text">Los componentes de las marcas mas reconocidas al mejor precio que podrás
+                            encontrar.</p>
+                    </div>
+
+                </div>
+
+                <div class="serv-card serv-card-3">
+                    <img src="./images/servicio-tecnico-1.png" alt="" class="serv-card">
+
+                    <div class="serv">
+
+                        <h2 class="servicio-tec">
+                            Servicio Técnico
+                        </h2>
+                        <p class="serv-text">Profesionales del mas alto nivel, se encargan de que tus dispositivos
+                            trabajen al 100. </p>
+                    </div>
+
+                </div>
+                <div class="serv-card serv-card-4">
+                    <img src="./images/delivery.png" alt="" class="serv-card">
+                    <div class="serv">
+                        <h2 class="entrega">Entregas a todo el Pais</h2>
+                        <p class="serv-text">Hacemos envios a todo el Ecuador a traves de Servientrega.</p>
+                    </div>
 
 
-        
+
+                </div>
+                <div class="serv-card serv-card-5">
+                    <img src="./images/socios.png" alt="" class="serv-card">
+                    <div class="serv">
+                        <h2 class="entrega">Somos tus Proveedores</h2>
+                        <p class="serv-text">Trabaja con nosotros y obten un descuento para distribuidores.</p>
+                    </div>
+                </div>
+                <div class="serv-card serv-card-6">
+                    <img src="./images/garantia.png" alt="" class="serv-card">
+
+                    <div class="serv">
+                        <h2 class="entrega">Garantía</h2>
+                        <p class="serv-text">Todos nuestros prouctos ceuntan con garantía</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
 
     </main>
 
     <footer class="footer">
 
-        <div class="col">
-            <img class="footer-logo" src="./images/logo.png" alt="footer logo">
-            <h4>Contacto</h4>
-            <p> <strong>Email:</strong> microfixec@gmail.com</p>
-            <p> <strong>Whatsapp:</strong> 0958946057</p>
-            <p> <strong> Dirección:</strong> Ambato, Matheu y Cazadores</p>
-            <p> <strong> Horario:</strong> Lunes a Sabado de 9:00 am a 19:00 pm</p>
-            <div class="follow">
-                <h4>Siguenos</h4>
-                <div class="social-icon">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-tiktok"></i>
+        <div class="footer-info">
+            <div class="col">
+                <img class="footer-logo" src="/images/logo.png" alt="footer logo">
+                <h4>Contacto</h4>
+                <p> <strong>Email:</strong> microfixec@gmail.com</p>
+                <p> <strong>Whatsapp:</strong> 0958946057</p>
+                <p> <strong> Dirección:</strong> Ambato, Matheu y Cazadores</p>
+                <p> <strong> Horario:</strong> Lunes a Sabado de 9:00 am a 19:00 pm</p>
+                <div class="follow">
+                    <h4>Siguenos</h4>
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/microfix1/" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/microfix.ec/"><i class="fab fa-instagram"></i></a>
+                        <i class="fab fa-tiktok"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <h4>Sobre Nosotros</h4>
-            <a href="/#/">Sobre Nosotros</a>
-            <a href="/#/">Información de Envíos</a>
-            <a href="/#/">Contacto</a>
+            <div class="col">
+                <h4>Sobre Nosotros</h4>
+                <a href="./about.html">Sobre Nosotros</a>
+                <a href="/#/">Información de Envíos</a>
+                <a href="./contact.html">Contacto</a>
+                <a href="./contact.html">¿Cómo comprar?</a>
 
 
-        </div>
 
-        <div class="col">
+            </div>
+
+            <!-- <div class="col">
             <h4>Mi Cuenta</h4>
             <a href="/#/">Ingresar</a>
             <a href="/#/">Ver Carrito</a>
             <a href="/#/">Lista de Deseos</a>
             <a href="/#/">Ayuda</a>
+        </div> -->
 
 
 
+            <div class="col paid-methods">
+                <h4>Metodos de Pago</h4>
+                <p>Transferencia Bancaria</p>
+                <p>Banco Pichincha</p>
+                <p>Banco del Pacífico</p>
+                <p>Cooperativa Oscus </p>
+                <p>Cooperativa San Francisco </p>
+
+
+            </div>
         </div>
-
-
-
-        <div class="col paid-methods">
-            <h4>Metodos de Pago</h4>
-            <p>Transferencia Bancaria</p>
-            <p>Banco Pichincha</p>
-            <p>Banco del Pacífico</p>
-            <p>Cooperativa Oscus </p>
-            <p>Cooperativa San Francisco </p>
-
-
+        <div class="copyrigth">
+            <p> © 2023, Made by Ing. Danny Merino</p>
         </div>
-        <!-- 
-            <div class="copyrigth">
-                <p> © 2022, Made by Microfix Web Devs</p>
-            </div> -->
 
 
 

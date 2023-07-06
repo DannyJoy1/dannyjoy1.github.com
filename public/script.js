@@ -111,9 +111,27 @@ async function pay() {
 
     }
 
-    if (order.items.length === 0) {
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const telInput = document.getElementById('tel');
+
+    function isFormFilled() {
+      return (
+        nameInput.value !== '' &&
+        emailInput.value !== '' &&
+        telInput.value !== ''
+
+      );
+
+    }
+
+
+    if (order.items.length === 0 || !isFormFilled()) {
+      alert('Por favor complete los datos de envío');
+
       document.getElementById('checkout').disabled = true;
       return
+
 
     }
 
@@ -195,58 +213,58 @@ function displayProducts() {
 }
 
 
-const searchForm = document.getElementById('searchForm');
-const searchResultsContainer = document.getElementById('searchResults');
+// const searchForm = document.getElementById('searchForm');
+// const searchResultsContainer = document.getElementById('searchResults');
 
-searchForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
+// searchForm.addEventListener('submit', async (event) => {
+//   event.preventDefault();
 
-  const searchTerm = document.getElementById('searchInput').value;
+//   const searchTerm = document.getElementById('searchInput').value;
 
 
-  try {
-    const response = await fetch(`/api/search?term=${encodeURIComponent(searchTerm)}`);
-    const searchResults = await response.json();
+//   try {
+//     const response = await fetch(`/api/search?term=${encodeURIComponent(searchTerm)}`);
+//     const searchResults = await response.json();
 
-    // Limpiar los resultados anteriores
-    searchResultsContainer.innerHTML = '';
+//     // Limpiar los resultados anteriores
+//     searchResultsContainer.innerHTML = '';
 
-    // Mostrar los resultados de búsqueda
-    if (searchResults.length > 0) {
+//     // Mostrar los resultados de búsqueda
+//     if (searchResults.length > 0) {
 
-      searchResults.forEach((product) => {
-        const productElement = document.createElement('div');
-        let buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="card-button">
-          <i class="fas fa-cart-plus"></i></a>`;
+//       searchResults.forEach((product) => {
+//         const productElement = document.createElement('div');
+//         let buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="card-button">
+//           <i class="fas fa-cart-plus"></i></a>`;
 
-        if (product.stock <= 0) {
-          buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="disabled">
-            Sin Stock</a>`;
-        }
-        productElement.innerHTML =
-          `
-        <div class="card">
-        <a href="/sproduct.html" class="product-cart-link">
-            <img class="card-img" src="${product.image}" alt="${product.name}">
-            <div class="card-info">
-                <p class="text-title">${product.name}</p>
-                <p class="text-body">${product.desc}</p>
-            </div>
-        </a>
-        <div class="card-footer">
-            <p class="product-price">$${product.price}</p>
-            ${buttonHTML}
-        </div>
-    </div>`;
-        searchResultsContainer.appendChild(productElement);
-      });
-    } else {
-      searchResultsContainer.innerHTML = '<p style="color:white"> :( No se encontraron resultados.</p>';
-    }
-  } catch (error) {
-    console.error('Error en la solicitud de búsqueda:', error);
-  }
-});
+//         if (product.stock <= 0) {
+//           buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="disabled">
+//             Sin Stock</a>`;
+//         }
+//         productElement.innerHTML =
+//           `
+//         <div class="card">
+//         <a href="/sproduct.html" class="product-cart-link">
+//             <img class="card-img" src="${product.image}" alt="${product.name}">
+//             <div class="card-info">
+//                 <p class="text-title">${product.name}</p>
+//                 <p class="text-body">${product.desc}</p>
+//             </div>
+//         </a>
+//         <div class="card-footer">
+//             <p class="product-price">$${product.price}</p>
+//             ${buttonHTML}
+//         </div>
+//     </div>`;
+//         searchResultsContainer.appendChild(productElement);
+//       });
+//     } else {
+//       searchResultsContainer.innerHTML = '<p style="color:white"> :( No se encontraron resultados.</p>';
+//     }
+//   } catch (error) {
+//     console.error('Error en la solicitud de búsqueda:', error);
+//   }
+// });
 
 
 async function fetchProducts() {
@@ -298,5 +316,60 @@ window.onload = async () => {
     console.log(order.items);
 
 
+  }
+  if (currentPage === '/' || '/index.html') {
+
+    const searchForm = document.getElementById('searchForm');
+    const searchResultsContainer = document.getElementById('searchResults');
+
+    searchForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const searchTerm = document.getElementById('searchInput').value;
+
+
+      try {
+        const response = await fetch(`/api/search?term=${encodeURIComponent(searchTerm)}`);
+        const searchResults = await response.json();
+
+        // Limpiar los resultados anteriores
+        searchResultsContainer.innerHTML = '';
+
+        // Mostrar los resultados de búsqueda
+        if (searchResults.length > 0) {
+
+          searchResults.forEach((product) => {
+            const productElement = document.createElement('div');
+            let buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="card-button">
+              <i class="fas fa-cart-plus"></i></a>`;
+
+            if (product.stock <= 0) {
+              buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="disabled">
+                Sin Stock</a>`;
+            }
+            productElement.innerHTML =
+              `
+            <div class="card">
+            <a href="/sproduct.html" class="product-cart-link">
+                <img class="card-img" src="${product.image}" alt="${product.name}">
+                <div class="card-info">
+                    <p class="text-title">${product.name}</p>
+                    <p class="text-body">${product.desc}</p>
+                </div>
+            </a>
+            <div class="card-footer">
+                <p class="product-price">$${product.price}</p>
+                ${buttonHTML}
+            </div>
+        </div>`;
+            searchResultsContainer.appendChild(productElement);
+          });
+        } else {
+          searchResultsContainer.innerHTML = '<p style="color:white"> :( No se encontraron resultados.</p>';
+        }
+      } catch (error) {
+        console.error('Error en la solicitud de búsqueda:', error);
+      }
+    });
   }
 }
