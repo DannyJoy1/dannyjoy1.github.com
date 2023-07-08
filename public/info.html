@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+
+    <title>Microfix</title>
+</head>
+
+<body class="shop-body">
+    <header class="header">
+
+        <a class="brand" href="/index.html">
+            <img src="./images/logo.png" alt="logo" class="logo">
+        </a>
+        <a id="cart-btn"><i id="checkout" onClick="goToCart()" class="carrito fas fa-shopping-bag"></i></a>
+
+        <div class="nav">
+
+
+            <ul id="nav-bar" class="nav-bar">
+
+                <li><a href="/index.html#featured-products">Productos</a></li>
+                <li><a href="/about.html">Sobre Nosotros</a></li>
+                <li><a href="/contact.html">Contacto</a></li>
+                <a id="close"><i class="fas fa-times"></i></a>
+
+            </ul>
+
+
+        </div>
+
+        <div class="mobile">
+
+            <i id="bar-icon" class=" fas fa-bars"></i>
+
+        </div>
+
+        <!-- </div> -->
+    </header>
+
+    <div class="wp-btn">
+        <a target="_blank" href="https://api.whatsapp.com/send?phone=593958946057&text=Ayuda"><img
+                src="./images/WhatsApp.svg.png" alt="whatsapp btn"></a>
+    </div>
+
+
+    <main class="shop-main">
+        <div class="shop-hero">
+            <!-- <img src="/images/logo-2.png" alt="logo" class="hero-img"> -->
+
+            <h2>¿Cómo comprar en <span>#Microfix</span>? </h2>
+            <p>¡El Setup Gamer que siempre quisiste, al mejor precio!</p>
+
+
+
+
+        </div>
+
+
+        <!-- <div class="productos">
+          
+            <div class="product-cards">
+                <div class="card" onclick="window.location.href='sproduct.html';">
+                    <a  class="product-cart-link">
+                        <img class="card-img" src="./products/ssd-k-1tb.png" alt="">
+
+                        <div class="card-info">
+                            <p class="text-title">SSD Kingston 250GB </p>
+                            <p class="text-body">PCIe 4.0 - NVMe - M.2 - 3500MB/s</p>
+                        </div>
+                    </a>
+                    <div class="card-footer">
+                        <p class="product-price">$25</p></span>
+                        <a href="/#/cart" class="card-button">
+
+                            <i class="fas fa-cart-plus"></i></a>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div> -->
+
+        <div class="instruction-sec">
+            <div class="instruction">
+
+                <div class="inst-card">
+                    <img src="./images/inst1.webp" alt="">
+                    <div class="inst-card-text">
+                        <h3>Navega por nuestro amplio catálogo</h3>
+                        <p>Busca el producto que necesitas, en nuestro amplio catálogo
+                            en la sección PRODUCTOS de nuestra página principal.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="inst-card">
+                    <img src="./images/carrito.PNG" alt="">
+                    <div class="inst-card-text">
+                        <h3>Agrega los productos al carrito</h3>
+                        <p>Para cada producto que desees comprar, busca el botón con el icono del carrito y presiónalo.
+                            Esto agregará el producto a tu carrito de compras.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="inst-card">
+                    <img src="./images/carritonav.PNG" alt="">
+                    <div class="inst-card-text">
+                        <h3>Ve al carrito de compras</h3>
+                        <p>En la barra de navegación de la página, encontrarás un botón con el icono del carrito. Haz
+                            clic en ese botón para ir a la página del carrito de compras.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="inst-card">
+                    <img src="./images/carritopage.webp" alt="">
+                    <div class="inst-card-text">
+                        <h3>Revisa y modifica tu selección</h3>
+                        <p>En la página del carrito de compras, verás todos los productos que seleccionaste. Si deseas
+                            eliminar un producto, busca el icono con la X en la tabla y presiónalo para eliminarlo de tu
+                            carrito.
+                        </p>
+                    </div>
+                </div>
+                <div class="inst-card">
+                    <img src="./images/form.webp" alt="">
+                    <div class="inst-card-text">
+                        <h3>Llena el formulario de datos de envío</h3>
+                        <p>Para poder procesar tu pedido y ponernos en contacto contigo, es esencial que llenes el
+                            formulario con tus datos de envío. Asegúrate de proporcionar información precisa y completa.
+                        </p>
+                    </div>
+                </div>
+                <div class="inst-card">
+                    <img src="./images/formfill.PNG" alt="">
+                    <div class="inst-card-text">
+                        <h3>Verifica tu información</h3>
+                        <p>Antes de proceder al pago, revisa cuidadosamente que todos los detalles de tu información de
+                            envío sean correctos. Ten en cuenta que es posible que no puedas modificar estos datos una
+                            vez confirmado el pedido.
+                        </p>
+                    </div>
+                </div>
+                <div class="inst-card">
+                    <img src="./images/checkout.webp" alt="">
+                    <div class="inst-card-text">
+                        <h3>Confirma</h3>
+                        <p>Una vez que hayas verificado tu información y los productos, presiona el botón "Confirmar y
+                            Pagar" para proceder con el proceso de pago.
+                        </p>
+                    </div>
+                </div>
+                <div class="inst-card">
+                    <img src="./images/confirmacion.PNG" alt="">
+                    <div class="inst-card-text">
+                        <h3>Confirmación de compra:</h3>
+                        <p>Si todo ha salido correctamente, aparecerá un cuadro o mensaje confirmando tu compra. Esto
+                            indica que tu pedido ha sido procesado exitosamente.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="inst-card">
+                    <img src="./images/contact.svg" alt="">
+                    <div class="inst-card-text">
+                        <h3>Proceso de Pago</h3>
+                        <p>inmediatamente uno de nuestros asesores se pondrá en contacto contigo mediante Whatsapp o
+                            correo electrónico.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="inst-card">
+                    <img src="./images//pay.svg" alt="">
+                    <div class="inst-card-text">
+                        <h3>Métodos de Pago</h3>
+                        <p>Puedes realizar tu pago mediante transferencia bancaria a las siguientes opciones:
+
+
+                        </p>
+                        <ul>
+                            <li>Banco Pichincha</li>
+                            <li>Banco del Pacífico</li>
+                            <li>COAC Oscus</li>
+                            <li>COAC San Francisco</li>
+                            <li>De Una!</li>
+                        </ul><br>
+
+                        <div class="logos-bancos">
+                            <img src="./images/Banco-Pichincha.webp" alt="">
+                            <img src="./images/b-pacfico.png" alt="">
+                            <img src="./images/oscus.png" alt="">
+                            <img src="./images/sanfrancisco.webp" alt="">
+                            <img src="./images/deuna.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inst-card">
+                    <img src="./images/delivery.webp" alt="">
+                    <div class="inst-card-text">
+                        <h3>Envío</h3>
+                        <p>Los envíos fuera de la ciudad de Ambato se hacen mediante Servientrega, el asesor comercial
+                            es el encargado de realizar el cálculo del valor de envío segun las tarifas de Servientrega.
+                            <br><br> Tu compra llegará a la puerta de tu casa en un máximo de 3 dias laborales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-info">
+            <div class="col">
+                <img class="footer-logo" src="./images/logo.png" alt="footer logo">
+                <h4>Contacto</h4>
+                <p> <strong>Email:</strong> microfixec@gmail.com</p>
+                <p> <strong>Whatsapp:</strong> 0958946057</p>
+                <p> <strong> Dirección:</strong> Ambato, Matheu y Cazadores</p>
+                <p> <strong> Horario:</strong> Lunes a Sabado de 9:00 am a 19:00 pm</p>
+                <div class="follow">
+                    <h4>Siguenos</h4>
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/microfix1/" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/microfix.ec/"><i class="fab fa-instagram"></i></a>
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h4>Sobre Nosotros</h4>
+                <a href="./about.html">Sobre Nosotros</a>
+                <a href="./info.html">Información de Envíos</a>
+                <a href="./contact.html">Contacto</a>
+                <a href="./info.html">¿Cómo comprar?</a>
+
+
+
+            </div>
+
+            <!-- <div class="col">
+            <h4>Mi Cuenta</h4>
+            <a href="/#/">Ingresar</a>
+            <a href="/#/">Ver Carrito</a>
+            <a href="/#/">Lista de Deseos</a>
+            <a href="/#/">Ayuda</a>
+        </div> -->
+
+
+
+            <div class="col paid-methods">
+                <h4>Metodos de Pago</h4>
+                <p>Transferencia Bancaria</p>
+                <p>Banco Pichincha</p>
+                <p>Banco del Pacífico</p>
+                <p>Cooperativa Oscus </p>
+                <p>Cooperativa San Francisco </p>
+
+
+            </div>
+        </div>
+        <div class="copyrigth">
+            <p> © 2023, Made by Ing. Danny Merino</p>
+        </div>
+
+
+
+    </footer>
+    <script src="./script.js"></script>
+
+
+
+</body>
+
+</html>

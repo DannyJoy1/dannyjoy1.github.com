@@ -215,7 +215,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-image: url(./images/shop-banner.png);
+    background-image: url(./images/shop-banner.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -343,7 +343,7 @@ h1 {
     color: white;
     text-align: center;
     /* background-color: #0f4b80; */
-    background-image: url(./images/fondo-card.jpg);
+    background-image: url(./images/fondo-card.webp);
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px 10px 70% 0;
@@ -643,7 +643,7 @@ svg {
     align-items: center;
     text-align: center;
     margin: 40px 0;
-    background-image: url(./images/banner-g.jpeg);
+    background-image: url(./images/banner-g.webp);
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -695,7 +695,7 @@ footer {
     flex-direction: column;
 
     color: white;
-    padding: 5rem;
+    padding: 5rem 5rem 1.8rem 5rem;
     background-color: #181719;
 }
 
@@ -795,7 +795,7 @@ footer {
 }
 
 .shop-hero {
-    background-image: url('./images/shop-banner.png');
+    background-image: url('./images/shop-banner.webp');
     color: white;
     width: 100%;
     height: 50vh;
@@ -1118,7 +1118,7 @@ footer {
 
 .contact-hero {
 
-    background-image: url('./images/banner-dark.jpeg');
+    background-image: url('./images/banner-dark.webp');
     color: white;
     width: 100%;
     height: 50vh;
@@ -1511,7 +1511,7 @@ footer {
 }
 
 .cart-hero {
-    background-image: url(./images/cart-banner.jpeg);
+    background-image: url(./images/cart-banner.webp);
     height: 200px;
 }
 
@@ -1536,7 +1536,7 @@ footer {
 
 .delivery-form label {
     font-weight: bold;
-    color: white;
+    color: var(--main-color);
     font-size: 1.4rem;
 }
 
@@ -1547,6 +1547,7 @@ footer {
 .delivery-form-g {
     display: flex;
     flex-direction: column;
+
 }
 
 .delivery-form-g input {
@@ -1555,6 +1556,7 @@ footer {
     border-radius: 8px;
     margin: 1rem 0 2rem 0;
     background-color: #93a29f5e;
+    color: white;
 }
 
 .delivery-form-g input::placeholder {
@@ -1632,9 +1634,154 @@ footer {
     display: flex;
 }
 
+.inst-title{
+    color: white;
+    font-size: 4.5rem;
+    margin: 2rem;
+}
+
+.instruction-sec{
+    background-image: url(./images/fondo916.svg);
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 2rem;
+}
+
+
+
+.instruction{
+   
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.inst-card{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+width: 950px;
+height: auto;
+background: rgba(111, 110, 110, 0.3);
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+border: 1.5px solid rgba(209, 213, 219, 0.3);
+border-radius: 5px;
+margin: 2rem;
+font-size: 2rem;
+flex-wrap: wrap;
+
+}
+
+.inst-card > img{
+    margin: 2rem;
+    width: 50%;
+    object-fit: cover;
+
+}
+
+.inst-card-text{
+    width: 380px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+}
+
+.inst-card-text h3{
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 2.8rem;
+}
+.inst-card-text p{
+    color: white;
+}
+
+.inst-card-text ul{
+    font-size: 1.5rem;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 1rem;
+
+}
+
+.logos-bancos{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .3);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3);
+
+
+
+
+}
+
+.logos-bancos img{
+    width: 40px;
+    object-fit: cover;
+}
+
+
 
 /***********************/
+ .wp-btn{
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+   
+} 
+.wp-btn a img{
+    position: relative;
+    width: 60px;
+    z-index: 9;
 
+}
+.wp-btn a:after,
+    .wp-btn a:before {
+        content: "";
+        position: absolute;
+        top:4px;
+        left: 6px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: #25d366;
+        animation: wpbtn 1.7s infinite;
+    }
+
+    .wp-btn a:before {
+        animation-delay: 1s;
+    }
+    .wp-btn a:after{
+        animation-delay: 1.3s;
+    } 
+
+
+@keyframes wpbtn {
+    0%{
+     transform: scale(1);
+    }
+
+    15%{
+     opacity: 1;
+    }
+
+    
+
+    100%{
+   transform: scale(2.5);
+   opacity: 0;
+    }
+    
+}
 
 
 
@@ -1825,12 +1972,12 @@ footer {
 
 }
 
-@media (max-height: 1367px) {
+/* @media (max-height: 1367px) {
     .mensaje {
         top: 30%;
 
     }
-}
+} */
 
 @media (max-width: 477px) {
     .prod-details {
@@ -1869,6 +2016,7 @@ footer {
         padding: 20px;
 
     }
+
 
 }
 
@@ -1913,6 +2061,14 @@ footer {
     .contact-hero h2 {
         font-size: 4rem;
 
+
     }
 
+    .inst-card-text{
+        width: 100%;
+    }
+    .logos-bancos{
+        width: 250px;
+        margin: 0 auto;
+    }
 }
