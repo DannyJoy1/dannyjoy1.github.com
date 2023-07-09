@@ -22,6 +22,8 @@ let total = 0;
 let order = {
   items: []
 };
+let productDetails = [];
+
 
 function saveDataToLocalStorage() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -193,7 +195,7 @@ function displayProducts() {
 
       productsHTML +=
         `<div class="card">
-            <a href="/sproduct.html" class="product-cart-link">
+            <a style="cursor:pointer" class="product-cart-link">     
                 <img class="card-img" src="${p.image}" alt="">
                 <div class="card-info">
                     <p class="text-title">${p.name}</p>
@@ -208,68 +210,85 @@ function displayProducts() {
     });
 
     productsContainer.innerHTML = productsHTML;
+
+    const productElements = document.getElementsByClassName('product-cart-link');
+
+    for (let i = 0; i < productElements.length; i++) {
+      const productElement = productElements[i];
+      productElement.addEventListener('click', () => {
+        window.location.href = `sproduct.html?productId=${(i+1)}`;
+      });
+    }
   }
   saveDataToLocalStorage();
 }
 
 
-// const searchForm = document.getElementById('searchForm');
-// const searchResultsContainer = document.getElementById('searchResults');
 
-// searchForm.addEventListener('submit', async (event) => {
-//   event.preventDefault();
+///////////////////////////////////////////
 
-//   const searchTerm = document.getElementById('searchInput').value;
+async function displayProductDetails() {
+  const productDetailsContainer = document.getElementById('prod-details');
+  if (productDetailsContainer) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const productId = urlParams.get('productId');
+
+    const matchedProducts = productDetails.filter(product => product.id === parseInt(productId));
+
+    if (matchedProducts.length > 0) {
+      let productDetailsHTML = '';
+
+      matchedProducts.forEach(p => {
+
+        console.log(p.stock);
 
 
-//   try {
-//     const response = await fetch(`/api/search?term=${encodeURIComponent(searchTerm)}`);
-//     const searchResults = await response.json();
+        let detButtonHTML = '';
 
-//     // Limpiar los resultados anteriores
-//     searchResultsContainer.innerHTML = '';
+        if (p.stock <= 0) {
+          detButtonHTML = `
+    <button id="add-cart-sproduct" class="normal" disabled>Sin Stock</button>`;
+        } else {
+          detButtonHTML = `
+    <button onClick="add(${p.id}, ${p.price})" id="add-cart-sproduct" class="normal">Agregar al Carrito</button>`;
+        }
 
-//     // Mostrar los resultados de búsqueda
-//     if (searchResults.length > 0) {
 
-//       searchResults.forEach((product) => {
-//         const productElement = document.createElement('div');
-//         let buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="card-button">
-//           <i class="fas fa-cart-plus"></i></a>`;
+        productDetailsHTML += `
 
-//         if (product.stock <= 0) {
-//           buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="disabled">
-//             Sin Stock</a>`;
-//         }
-//         productElement.innerHTML =
-//           `
-//         <div class="card">
-//         <a href="/sproduct.html" class="product-cart-link">
-//             <img class="card-img" src="${product.image}" alt="${product.name}">
-//             <div class="card-info">
-//                 <p class="text-title">${product.name}</p>
-//                 <p class="text-body">${product.desc}</p>
-//             </div>
-//         </a>
-//         <div class="card-footer">
-//             <p class="product-price">$${product.price}</p>
-//             ${buttonHTML}
-//         </div>
-//     </div>`;
-//         searchResultsContainer.appendChild(productElement);
-//       });
-//     } else {
-//       searchResultsContainer.innerHTML = '<p style="color:white"> :( No se encontraron resultados.</p>';
-//     }
-//   } catch (error) {
-//     console.error('Error en la solicitud de búsqueda:', error);
-//   }
-// });
+        <div class="sprod-img">
+        <img src="${p.image}" width="100%" id="MainImg" alt="${p.name}">
+        
+        </div>
 
+        <div class="sprod-details">
+                <h6>Unidad de Estado Sólido</h6>
+                <h2 id="productName"></h2>${p.name}</h2>
+                <h3 id="productPrice">$${p.price}</h3>
+                ${detButtonHTML}
+                <h4>Detalles del Producto</h4>
+                <span id="productDescription"></span>${p.det} </span>
+
+
+            </div>
+
+        `;
+      });
+
+      productDetailsContainer.innerHTML = productDetailsHTML;
+    }
+  }
+  saveDataToLocalStorage();
+}
+
+//////////////////////////////////////////
 
 async function fetchProducts() {
   productList = await (await fetch("/api/products")).json();
+  productDetails = await (await fetch('/api/productdetails')).json();
   displayProducts();
+  displayProductDetails();
   saveDataToLocalStorage();
 }
 
@@ -305,11 +324,7 @@ window.onload = async () => {
             </tr>`;
     });
 
-
-
     document.getElementById('order-table').innerHTML = productsHTML;
-
-
 
     console.log(carrito);
 
@@ -317,6 +332,7 @@ window.onload = async () => {
 
 
   }
+
   if (currentPage === '/' || '/index.html') {
 
     const searchForm = document.getElementById('searchForm');

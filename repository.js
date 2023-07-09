@@ -43,7 +43,7 @@ async function read() {
 
     }));
 
-    console.log(products);
+    // console.log(products);
     return products;
 
 
@@ -102,10 +102,36 @@ async function search(searchTerm) {
 }
 
 
+async function readDetails() {
+    const details = await sheets.spreadsheets.values.get({
+        spreadsheetId: '1n-nuOlzD9pgB33s_rPlUHYk8fU37ajLQNsKmFdn4wqg',
+        range: 'Products!A2:G',
+    });
+
+    const rows = details.data.values;
+    const productDetails = rows.map((row) => ({
+
+        id: +row[0],
+        name: row[1],
+        price: +row[2],
+        image: row[3],
+        stock: +row[4],
+        desc: row[5],
+        det: row[6]
+
+    }));
+
+    console.log(productDetails);
+    return productDetails;
+
+
+}
+
 
 module.exports = {
     read,
     write,
     writeOrders,
     search,
+    readDetails,
 };

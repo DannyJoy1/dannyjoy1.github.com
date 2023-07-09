@@ -12,39 +12,42 @@
 </head>
 
 <body class="shop-body">
-    <header class="shop-header">
+    <header class="header">
 
-        <a class="brand" href="./index.html">
+        <a class="brand" href="/index.html">
             <img src="./images/logo.png" alt="logo" class="logo">
         </a>
+        <a id="cart-btn"><i id="checkout" onClick="goToCart()" class="carrito fas fa-shopping-bag"></i></a>
 
-        <!-- <div class="nav"> -->
-        <ul id="nav-bar" class="nav-bar">
-            <li><a href="./index.html">Home</a></li>
-            <li><a class="active" href="./shop.html">Tienda</a></li>
-            <li><a href="./about.html">Sobre Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="./contact.html">Contacto</a></li>
-            <li id="lg-bag"><a href="./cart.html"><i class="fas fa-shopping-bag"></i></a></li>
-            <a href="/#/" id="close"><i class="fas fa-times"></i></a>
-        </ul>
+        <div class="nav">
+
+
+            <ul id="nav-bar" class="nav-bar">
+
+                <li><a href="/index.html#featured-products">Productos</a></li>
+                <li><a href="/about.html">Sobre Nosotros</a></li>
+                <li><a href="/contact.html">Contacto</a></li>
+                <a id="close"><i class="fas fa-times"></i></a>
+
+            </ul>
+
+
+        </div>
 
 
 
         <div class="mobile">
-            <a href="./cart.html"><i class="fas fa-shopping-bag"></i></a>
 
             <i id="bar-icon" class=" fas fa-bars"></i>
 
         </div>
 
-        <!-- </div> -->
     </header>
 
     <main class="shop-main">
 
         <div class="prod-details" id="prod-details">
-            <div class="sprod-img">
+            <!-- <div class="sprod-img">
                 <img src="./products/ssd-k-250gb.png" width="100%" id="MainImg" alt="ssd 250GB">
                 <div class="small-img-group">
                     <div class="small-img-col">
@@ -61,191 +64,90 @@
                     </div>
 
                 </div>
-            </div>
-            <div class="sprod-details">
-                <h6>Unidad de Estado Sólido</h6>
-                <h2>SSD Kingston 250GB M.2 NVMe</h2>
-                <h3>$25.00</h3>
-                <input type="number" value="1">
-                <button class="normal">Agregar al Carrito</button>
-                <h4>Detalles del Producto</h4>
-                <span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit repudiandae porro consectetur omnis
-                    voluptatem at tempora nobis praesentium, enim quia vel cumque possimus nisi laborum, ut aspernatur
-                    illum aliquam? Aut?</span>
-
-
-            </div>
+            </div> -->
 
         </div>
-        
-
-        <div class="productos">
-            <h2 class="prod-title">
-                Productos Destacados
-            </h2>
-            <!-- --------------------------------------------- -->
-
-            <div class="product-cards">
-                <div class="card">
-                    <a href="./sproduct.html" class="product-cart-link">
-                        <img class="card-img" src="./products/ssd-k-1tb.png" alt="">
-
-                        <div class="card-info">
-                            <p class="text-title">SSD Kingston 250GB </p>
-                            <p class="text-body">PCIe 4.0 - NVMe - M.2 - 3500MB/s</p>
-                        </div>
-                    </a>
-                    <div class="card-footer">
-                        <p class="product-price">$25</p></span>
-                        <a href="/#/cart" class="card-button">
-
-                            <i class="fas fa-cart-plus"></i></a>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="card">
-                    <a href="/#/product1" class="product-cart-link">
-                        <img class="card-img" src="./products/ssd-k-1tb.png" alt="">
-
-                        <div class="card-info">
-                            <p class="text-title">SSD Kingston 250GB </p>
-                            <p class="text-body">PCIe 4.0 - NVMe - M.2 - 3500MB/s</p>
-                        </div>
-                    </a>
-                    <div class="card-footer">
-                        <p class="product-price">$25</p></span>
-                        <a href="/#/cart" class="card-button">
-
-                            <i class="fas fa-cart-plus"></i></a>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="card">
-                    <a href="/#/product1" class="product-cart-link">
-                        <img class="card-img" src="./products/ssd-k-1tb.png" alt="">
-
-                        <div class="card-info">
-                            <p class="text-title">SSD Kingston 250GB </p>
-                            <p class="text-body">PCIe 4.0 - NVMe - M.2 - 3500MB/s</p>
-                        </div>
-                    </a>
-                    <div class="card-footer">
-                        <p class="product-price">$25</p></span>
-                        <a href="/#/cart" class="card-button">
-
-                            <i class="fas fa-cart-plus"></i></a>
-                        </a>
-                    </div>
-
-                </div>
-
-                <div class="card">
-                    <a href="/#/product1" class="product-cart-link">
-                        <img class="card-img" src="./products/ssd-k-1tb.png" alt="">
-
-                        <div class="card-info">
-                            <p class="text-title">SSD Kingston 250GB </p>
-                            <p class="text-body">PCIe 4.0 - NVMe - M.2 - 3500MB/s</p>
-                        </div>
-                    </a>
-                    <div class="card-footer">
-                        <p class="product-price">$25</p></span>
-                        <a href="/#/cart" class="card-button">
-
-                            <i class="fas fa-cart-plus"></i></a>
-                        </a>
-                    </div>
-
-                </div>
 
 
-
-            </div>
-
-        </div>
 
     </main>
 
+
     <footer class="footer">
 
-        <div class="col">
-            <img class="footer-logo" src="./images/logo.png" alt="footer logo">
-            <h4>Contacto</h4>
-            <p> <strong>Email:</strong> microfixec@gmail.com</p>
-            <p> <strong>Whatsapp:</strong> 0958946057</p>
-            <p> <strong> Dirección:</strong> Ambato, Matheu y Cazadores</p>
-            <p> <strong> Horario:</strong> Lunes a Sabado de 9:00 am a 19:00 pm</p>
-            <div class="follow">
-                <h4>Siguenos</h4>
-                <div class="social-icon">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-tiktok"></i>
+        <div class="footer-info">
+            <div class="col">
+                <img class="footer-logo" src="./images/logo.png" alt="footer logo">
+                <h4>Contacto</h4>
+                <p> <strong>Email:</strong> microfixec@gmail.com</p>
+                <p> <strong>Whatsapp:</strong> 0958946057</p>
+                <p> <strong> Dirección:</strong> Ambato, Matheu y Cazadores</p>
+                <p> <strong> Horario:</strong> Lunes a Sabado de 9:00 am a 19:00 pm</p>
+                <div class="follow">
+                    <h4>Siguenos</h4>
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/microfix1/" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/microfix.ec/"><i class="fab fa-instagram"></i></a>
+                        <i class="fab fa-tiktok"></i>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <h4>Sobre Nosotros</h4>
-            <a href="/#/">Sobre Nosotros</a>
-            <a href="/#/">Información de Envíos</a>
-            <a href="/#/">Contacto</a>
+            <div class="col">
+                <h4>Sobre Nosotros</h4>
+                <a href="./about.html">Sobre Nosotros</a>
+                <a href="./info.html">Información de Envíos</a>
+                <a href="./contact.html">Contacto</a>
+                <a href="./info.html">¿Cómo comprar?</a>
 
 
-        </div>
 
-        <div class="col">
+            </div>
+
+            <!-- <div class="col">
             <h4>Mi Cuenta</h4>
             <a href="/#/">Ingresar</a>
             <a href="/#/">Ver Carrito</a>
             <a href="/#/">Lista de Deseos</a>
             <a href="/#/">Ayuda</a>
+        </div> -->
 
 
 
+            <div class="col paid-methods">
+                <h4>Metodos de Pago</h4>
+                <p>Transferencia Bancaria</p>
+                <p>Banco Pichincha</p>
+                <p>Banco del Pacífico</p>
+                <p>Cooperativa Oscus </p>
+                <p>Cooperativa San Francisco </p>
+
+
+            </div>
         </div>
-
-
-
-        <div class="col paid-methods">
-            <h4>Metodos de Pago</h4>
-            <p>Transferencia Bancaria</p>
-            <p>Banco Pichincha</p>
-            <p>Banco del Pacífico</p>
-            <p>Cooperativa Oscus </p>
-            <p>Cooperativa San Francisco </p>
-
-
+        <div class="copyrigth">
+            <p> © 2023, Made by Ing. Danny Merino</p>
         </div>
-        <!-- 
-            <div class="copyrigth">
-                <p> © 2022, Made by Microfix Web Devs</p>
-            </div> -->
 
 
 
     </footer>
-    <script >
-        var MainImg = document.getElementById('MainImg');
-        var smallimg = document.getElementsByClassName('small-img');
+    <script>
+        // var MainImg = document.getElementById('MainImg');
+        // var smallimg = document.getElementsByClassName('small-img');
 
-        smallimg[0].onclick = function (){
-            MainImg.src = smallimg[0].src;
-        }
-        smallimg[1].onclick = function (){
-            MainImg.src = smallimg[1].src;
-        }
-        smallimg[2].onclick = function (){
-            MainImg.src = smallimg[2].src;
-        }
-        smallimg[3].onclick = function (){
-            MainImg.src = smallimg[3].src;
-        }
-
-
+        // smallimg[0].onclick = function (){
+        //     MainImg.src = smallimg[0].src;
+        // }
+        // smallimg[1].onclick = function (){
+        //     MainImg.src = smallimg[1].src;
+        // }
+        // smallimg[2].onclick = function (){
+        //     MainImg.src = smallimg[2].src;
+        // }
+        // smallimg[3].onclick = function (){
+        //     MainImg.src = smallimg[3].src;
+        // }
     </script>
     <script src="./script.js"></script>
 

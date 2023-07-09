@@ -2,10 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const repository = require('./repository');
 
-///////////
 const path = require('path');
 
-/////////////
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,7 +14,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-// Ruta para la búsqueda
+
 app.get('/api/search', async (req, res) => {
   const searchTerm = req.query.term; // Obtener el término de búsqueda del parámetro de consulta
 
@@ -31,38 +29,44 @@ app.get('/api/products', async (req, res) => {
   res.send(await repository.read());
 });
 
+
+app.get('/api/productdetails/', async (req, res) => {
+  res.send(await repository.readDetails());
+})
+
+
+
+
 app.post("/api/pay", async (req, res) => {
   const order = req.body;
-  const items = order.items; // Obtener los productos del carrito
-  const productsCopy = await repository.read(); // Leer los productos de la hoja de cálculo
-
+  const items = order.items;
+  const productsCopy = await repository.read();
   let error = false;
 
-  // Iterar sobre cada producto en el carrito
+
   for (const item of items) {
-    const product = productsCopy.find((p) => p.id === item.id); // Buscar el producto correspondiente en la hoja de cálculo
+    const product = productsCopy.find((p) => p.id === item.id);
 
     if (product && product.stock >= item.quantity) {
-      // Verificar si el producto existe y hay suficiente stock
-      product.stock -= item.quantity; // Descontar la cantidad del producto en el stock
+
+      product.stock -= item.quantity;
     } else {
       error = true;
-      break; // Si hay algún error, salir del bucle
+      break;
     }
   }
 
   if (error) {
-    res.status(400).send("Sin stock"); // Enviar respuesta de error si hay productos sin stock suficiente
+    res.status(400).send("Sin stock");
   } else {
-    await repository.write(productsCopy); // Guardar los cambios en la hoja de cálculo
+    await repository.write(productsCopy);
 
-    // guardar datos en shipping
     order.date = new Date().toISOString();
     order.status = "pendiente";
-    const orders = [order]; // Solo la orden actual, ya que no estás leyendo las órdenes existentes
+    const orders = [order];
     await repository.writeOrders(orders);
 
-    res.send(productsCopy); // Enviar los productos actualizados como respuesta
+    res.send(productsCopy);
   }
 });
 
