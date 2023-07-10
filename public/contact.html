@@ -98,15 +98,17 @@
 
 
         <div class="form-details" id="form-details">
-            <form action="">
+            <form action="https://formsubmit.co/dmerino2235@gmail.com" method="POST">
                 <span>DÉJANOS UN MENSAJE</span>
                 <h2>Nos encantaría saber de ti</h2>
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Correo">
+                <input required type="text" placeholder="Nombre" name="name">
+                <input required type="email" placeholder="Correo" name="email">
 
-                <input type="text" placeholder="Asunto">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
-                <button class="normal" type="submit">Enviar</button>
+                <input required type="text" placeholder="Asunto" name="asunto">
+                <textarea required name="mensaje" id="" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
+                <button class="normal" >Enviar</button>
+                <input type="hidden" name="_next" value="http://localhost:3000/">
+
             </form>
 
             <div class="social-link">

@@ -128,12 +128,18 @@ async function pay() {
     }
 
 
-    if (order.items.length === 0 || !isFormFilled()) {
-      alert('Por favor complete los datos de envío');
+    if (order.items.length === 0) {
+      alert('Por favor seleccione al menos un producto');
+      window.location.href = './index.html#featured-products';
+
 
       document.getElementById('checkout').disabled = true;
       return
-
+    }
+    if (!isFormFilled()) {
+      alert('Por favor complete los datos de envío');
+      document.getElementById('checkout').disabled = true;
+      return
 
     }
 
@@ -156,6 +162,13 @@ async function pay() {
 
   } catch {
     window.alert("Sin Stock");
+    window.location.href = './index.html#featured-products';
+
+    localStorage.removeItem('carrito');
+    localStorage.removeItem('total');
+    localStorage.removeItem('order');
+
+    return;
   }
   console.log(order.shipping);
 
@@ -167,12 +180,15 @@ async function pay() {
     items: []
   };
 
+
   await fetchProducts();
 
   saveDataToLocalStorage();
   localStorage.removeItem('carrito');
   localStorage.removeItem('total');
   localStorage.removeItem('order');
+
+
 
   const mensajeCompra = document.getElementById('mensaje');
   mensajeCompra.classList.add('visible');
@@ -195,7 +211,7 @@ function displayProducts() {
 
       productsHTML +=
         `<div class="card">
-            <a style="cursor:pointer" class="product-cart-link">     
+            <a style="cursor:pointer" class="product-cart-link" data-id="${p.id}">     
                 <img class="card-img" src="${p.image}" alt="">
                 <div class="card-info">
                     <p class="text-title">${p.name}</p>
@@ -207,25 +223,25 @@ function displayProducts() {
                 ${buttonHTML}
             </div>
         </div>`;
+
     });
 
     productsContainer.innerHTML = productsHTML;
 
-    const productElements = document.getElementsByClassName('product-cart-link');
+    const productLinks = document.getElementsByClassName('product-cart-link');
+    Array.from(productLinks).forEach(link => {
+      link.addEventListener('click', function (event) {
+        const productId = event.currentTarget.getAttribute('data-id');
+        window.location.href = `sproduct.html?productId=${(productId)}`;
 
-    for (let i = 0; i < productElements.length; i++) {
-      const productElement = productElements[i];
-      productElement.addEventListener('click', () => {
-        window.location.href = `sproduct.html?productId=${(i+1)}`;
+        console.log(productId);
       });
-    }
+    });
+
   }
   saveDataToLocalStorage();
 }
 
-
-
-///////////////////////////////////////////
 
 async function displayProductDetails() {
   const productDetailsContainer = document.getElementById('prod-details');
@@ -282,7 +298,6 @@ async function displayProductDetails() {
   saveDataToLocalStorage();
 }
 
-//////////////////////////////////////////
 
 async function fetchProducts() {
   productList = await (await fetch("/api/products")).json();
@@ -309,7 +324,6 @@ window.onload = async () => {
 
   if (currentPage === '/cart.html') {
     document.getElementById("order-total").innerHTML = ` $${total}`;
-    // document.getElementById("order-subtotal").innerHTML = ` $${total}`;
 
     let productsHTML = '';
     order.items.forEach(p => {
@@ -325,6 +339,7 @@ window.onload = async () => {
     });
 
     document.getElementById('order-table').innerHTML = productsHTML;
+
 
     console.log(carrito);
 
@@ -348,10 +363,8 @@ window.onload = async () => {
         const response = await fetch(`/api/search?term=${encodeURIComponent(searchTerm)}`);
         const searchResults = await response.json();
 
-        // Limpiar los resultados anteriores
         searchResultsContainer.innerHTML = '';
 
-        // Mostrar los resultados de búsqueda
         if (searchResults.length > 0) {
 
           searchResults.forEach((product) => {
@@ -366,7 +379,7 @@ window.onload = async () => {
             productElement.innerHTML =
               `
             <div class="card">
-            <a href="/sproduct.html" class="product-cart-link">
+            <a style="cursor:pointer" class="product-cart-link" data-id="${product.id}">
                 <img class="card-img" src="${product.image}" alt="${product.name}">
                 <div class="card-info">
                     <p class="text-title">${product.name}</p>
@@ -379,9 +392,23 @@ window.onload = async () => {
             </div>
         </div>`;
             searchResultsContainer.appendChild(productElement);
+
+            const productLinks = document.getElementsByClassName('product-cart-link');
+            Array.from(productLinks).forEach(link => {
+              link.addEventListener('click', function (event) {
+                const productId = event.currentTarget.getAttribute('data-id');
+                window.location.href = `sproduct.html?productId=${(productId)}`;
+
+                console.log(productId);
+              });
+            });
+
           });
         } else {
           searchResultsContainer.innerHTML = '<p style="color:white"> :( No se encontraron resultados.</p>';
+
+
+
         }
       } catch (error) {
         console.error('Error en la solicitud de búsqueda:', error);
