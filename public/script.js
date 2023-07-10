@@ -279,7 +279,7 @@ async function displayProductDetails() {
         </div>
 
         <div class="sprod-details">
-                <h6>Unidad de Estado Sólido</h6>
+                <h6>Producto</h6>
                 <h2 id="productName"></h2>${p.name}</h2>
                 <h3 id="productPrice">$${p.price}</h3>
                 ${detButtonHTML}
