@@ -212,7 +212,7 @@ function displayProducts() {
       productsHTML +=
         `<div class="card">
             <a style="cursor:pointer" class="product-cart-link" data-id="${p.id}">     
-                <img class="card-img" src="${p.image}" alt="">
+                <img class="card-img" src="/products/${p.image}" alt="">
                 <div class="card-info">
                     <p class="text-title">${p.name}</p>
                     <p class="text-body">${p.desc}</p>
@@ -274,7 +274,7 @@ async function displayProductDetails() {
         productDetailsHTML += `
 
         <div class="sprod-img">
-        <img src="${p.image}" width="100%" id="MainImg" alt="${p.name}">
+        <img src="/products/${p.image}" width="100%" id="MainImg" alt="${p.name}">
         
         </div>
 
@@ -330,7 +330,7 @@ window.onload = async () => {
       productsHTML += `
             <tr>
             <td><a href="" onClick="removeItem(${p.id}, ${p.price})"><i class="far fa-times-circle"></i></a></td>
-            <td><img src="${p.image}" alt=${p.name}></td>
+            <td><img src="/products/${p.image}" alt=${p.name}></td>
                 <td>${p.name}</td>
                 <td>${p.price}</td>
                 <td>${p.quantity}</td>
@@ -380,7 +380,7 @@ window.onload = async () => {
               `
             <div class="card">
             <a style="cursor:pointer" class="product-cart-link" data-id="${product.id}">
-                <img class="card-img" src="${product.image}" alt="${product.name}">
+                <img class="card-img" src="/products/${product.image}" alt="${product.name}">
                 <div class="card-info">
                     <p class="text-title">${product.name}</p>
                     <p class="text-body">${product.desc}</p>
