@@ -1,68 +1,63 @@
-const bar = document.getElementById('bar-icon');
-const close = document.getElementById('close');
+const bar = document.getElementById("bar-icon");
+const close = document.getElementById("close");
 
-const nav = document.getElementById('nav-bar');
+const nav = document.getElementById("nav-bar");
 
 if (bar) {
-  bar.addEventListener('click', () => {
-    nav.classList.add('active');
-  })
-}
-
-if (close) {
-  close.addEventListener('click', () => {
-    nav.classList.remove('active');
+  bar.addEventListener("click", () => {
+    nav.classList.add("active");
   });
 }
 
+if (close) {
+  close.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+}
 
 let productList = [];
 let carrito = [];
 let total = 0;
 let order = {
-  items: []
+  items: [],
 };
 let productDetails = [];
 
-
 function saveDataToLocalStorage() {
-  localStorage.setItem('carrito', JSON.stringify(carrito));
-  localStorage.setItem('total', total.toString());
-  localStorage.setItem('order', JSON.stringify(order));
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  localStorage.setItem("total", total.toString());
+  localStorage.setItem("order", JSON.stringify(order));
 }
 
 function loadDataFromLocalStorage() {
-  const carritoData = localStorage.getItem('carrito');
+  const carritoData = localStorage.getItem("carrito");
   if (carritoData) {
     carrito = JSON.parse(carritoData);
   }
-  const totalData = localStorage.getItem('total');
+  const totalData = localStorage.getItem("total");
   if (totalData) {
     total = parseFloat(totalData);
   }
-  const orderData = localStorage.getItem('order');
+  const orderData = localStorage.getItem("order");
   if (orderData) {
     order = JSON.parse(orderData);
   }
 }
 
-
-
 function add(productId, price) {
-  const product = productList.find(p => p.id === productId);
-  const existingItem = order.items.find(item => item.id === productId);
+  const product = productList.find((p) => p.id === productId);
+  const existingItem = order.items.find((item) => item.id === productId);
   product.stock--;
   if (existingItem) {
     existingItem.quantity++;
   } else {
-
     order.items.push({
       id: product.id,
       name: product.name,
       price: product.price,
       image: product.image,
       stock: product.stock,
-      quantity: 1
+      quantity: 1,
     });
     carrito.push(productId);
   }
@@ -73,9 +68,8 @@ function add(productId, price) {
   saveDataToLocalStorage();
 }
 
-
 function removeItem(productId, price) {
-  const existingItem = order.items.find(item => item.id === productId);
+  const existingItem = order.items.find((item) => item.id === productId);
 
   if (existingItem) {
     existingItem.quantity--;
@@ -85,7 +79,7 @@ function removeItem(productId, price) {
       if (index !== -1) {
         carrito.splice(index, 1);
       }
-      order.items = order.items.filter(item => item.id !== productId);
+      order.items = order.items.filter((item) => item.id !== productId);
     }
   }
 
@@ -94,113 +88,97 @@ function removeItem(productId, price) {
   saveDataToLocalStorage();
 }
 
-
-
-
-
 async function pay() {
   try {
-
     order.shipping = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      tel: document.getElementById('tel').value,
-      province: document.getElementById('province').value,
-      city: document.getElementById('city').value,
-      address1: document.getElementById('address1').value,
-      address2: document.getElementById('address2').value,
-      postal: document.getElementById('postal').value,
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      tel: document.getElementById("tel").value,
+      province: document.getElementById("province").value,
+      city: document.getElementById("city").value,
+      address1: document.getElementById("address1").value,
+      address2: document.getElementById("address2").value,
+      postal: document.getElementById("postal").value,
+    };
 
-    }
-
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const telInput = document.getElementById('tel');
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const telInput = document.getElementById("tel");
 
     function isFormFilled() {
       return (
-        nameInput.value !== '' &&
-        emailInput.value !== '' &&
-        telInput.value !== ''
-
+        nameInput.value !== "" &&
+        emailInput.value !== "" &&
+        telInput.value !== ""
       );
-
     }
-
 
     if (order.items.length === 0) {
-      alert('Por favor seleccione al menos un producto');
-      window.location.href = './index.html#featured-products';
+      alert("Por favor seleccione al menos un producto");
+      window.location.href = "./index.html#featured-products";
 
-
-      document.getElementById('checkout').disabled = true;
-      return
+      document.getElementById("checkout").disabled = true;
+      return;
     }
     if (!isFormFilled()) {
-      alert('Por favor complete los datos de envío');
-      document.getElementById('checkout').disabled = true;
-      return
-
+      alert("Por favor complete los datos de envío");
+      document.getElementById("checkout").disabled = true;
+      return;
     }
 
-    document.getElementById('name').disabled = true;
-    document.getElementById('email').disabled = true;
-    document.getElementById('tel').disabled = true;
-    document.getElementById('province').disabled = true;
-    document.getElementById('city').disabled = true;
-    document.getElementById('address1').disabled = true;
-    document.getElementById('address2').disabled = true;
-    document.getElementById('postal').disabled = true;
+    document.getElementById("name").disabled = true;
+    document.getElementById("email").disabled = true;
+    document.getElementById("tel").disabled = true;
+    document.getElementById("province").disabled = true;
+    document.getElementById("city").disabled = true;
+    document.getElementById("address1").disabled = true;
+    document.getElementById("address2").disabled = true;
+    document.getElementById("postal").disabled = true;
 
-    const productList = await (await fetch("/api/pay", {
-      method: "post",
-      body: JSON.stringify(order),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })).json();
-
+    const productList = await (
+      await fetch("/api/pay", {
+        method: "post",
+        body: JSON.stringify(order),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+    ).json();
   } catch {
     window.alert("Sin Stock");
-    window.location.href = './index.html#featured-products';
+    window.location.href = "./index.html#featured-products";
 
-    localStorage.removeItem('carrito');
-    localStorage.removeItem('total');
-    localStorage.removeItem('order');
+    localStorage.removeItem("carrito");
+    localStorage.removeItem("total");
+    localStorage.removeItem("order");
 
     return;
   }
   console.log(order.shipping);
 
-
-
   carrito = [];
   total = 0;
   order = {
-    items: []
+    items: [],
   };
-
 
   await fetchProducts();
 
   saveDataToLocalStorage();
-  localStorage.removeItem('carrito');
-  localStorage.removeItem('total');
-  localStorage.removeItem('order');
+  localStorage.removeItem("carrito");
+  localStorage.removeItem("total");
+  localStorage.removeItem("order");
 
-
-
-  const mensajeCompra = document.getElementById('mensaje');
-  mensajeCompra.classList.add('visible');
-
+  const mensajeCompra = document.getElementById("mensaje");
+  mensajeCompra.classList.add("visible");
 }
 
 function displayProducts() {
-  const productsContainer = document.getElementById('featured-products');
+  const productsContainer = document.getElementById("featured-products");
   if (productsContainer) {
-    let productsHTML = '';
+    let productsHTML = "";
 
-    productList.forEach(p => {
+    productList.forEach((p) => {
       let buttonHTML = `<a onClick="add(${p.id}, ${p.price})" class="card-button">
           <i class="fas fa-cart-plus"></i></a>`;
 
@@ -209,8 +187,7 @@ function displayProducts() {
             Sin Stock</a>`;
       }
 
-      productsHTML +=
-        `<div class="card">
+      productsHTML += `<div class="card">
             <a style="cursor:pointer" class="product-cart-link" data-id="${p.id}">     
                 <img class="card-img" src="/products/${p.image}" alt="">
                 <div class="card-info">
@@ -223,44 +200,41 @@ function displayProducts() {
                 ${buttonHTML}
             </div>
         </div>`;
-
     });
 
     productsContainer.innerHTML = productsHTML;
 
-    const productLinks = document.getElementsByClassName('product-cart-link');
-    Array.from(productLinks).forEach(link => {
-      link.addEventListener('click', function (event) {
-        const productId = event.currentTarget.getAttribute('data-id');
-        window.location.href = `sproduct.html?productId=${(productId)}`;
+    const productLinks = document.getElementsByClassName("product-cart-link");
+    Array.from(productLinks).forEach((link) => {
+      link.addEventListener("click", function (event) {
+        const productId = event.currentTarget.getAttribute("data-id");
+        window.location.href = `sproduct.html?productId=${productId}`;
 
         console.log(productId);
       });
     });
-
   }
   saveDataToLocalStorage();
 }
 
-
 async function displayProductDetails() {
-  const productDetailsContainer = document.getElementById('prod-details');
+  const productDetailsContainer = document.getElementById("prod-details");
   if (productDetailsContainer) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const productId = urlParams.get('productId');
+    const productId = urlParams.get("productId");
 
-    const matchedProducts = productDetails.filter(product => product.id === parseInt(productId));
+    const matchedProducts = productDetails.filter(
+      (product) => product.id === parseInt(productId)
+    );
 
     if (matchedProducts.length > 0) {
-      let productDetailsHTML = '';
+      let productDetailsHTML = "";
 
-      matchedProducts.forEach(p => {
-
+      matchedProducts.forEach((p) => {
         console.log(p.stock);
 
-
-        let detButtonHTML = '';
+        let detButtonHTML = "";
 
         if (p.stock <= 0) {
           detButtonHTML = `
@@ -269,7 +243,6 @@ async function displayProductDetails() {
           detButtonHTML = `
     <button onClick="add(${p.id}, ${p.price})" id="add-cart-sproduct" class="normal">Agregar al Carrito</button>`;
         }
-
 
         productDetailsHTML += `
 
@@ -298,21 +271,20 @@ async function displayProductDetails() {
   saveDataToLocalStorage();
 }
 
-
 async function fetchProducts() {
   productList = await (await fetch("/api/products")).json();
-  productDetails = await (await fetch('/api/productdetails')).json();
+  productDetails = await (await fetch("/api/productdetails")).json();
   displayProducts();
   displayProductDetails();
   saveDataToLocalStorage();
 }
 
 async function goToCart() {
-  const button = document.getElementById('cart-btn');
+  const button = document.getElementById("cart-btn");
 
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     saveDataToLocalStorage();
-    window.location.href = '/cart.html';
+    window.location.href = "/cart.html";
   });
 }
 
@@ -322,14 +294,16 @@ window.onload = async () => {
 
   const currentPage = window.location.pathname;
 
-  if (currentPage === '/cart.html') {
+  if (currentPage === "/cart.html") {
     document.getElementById("order-total").innerHTML = ` $${total}`;
 
-    let productsHTML = '';
-    order.items.forEach(p => {
+    let productsHTML = "";
+    order.items.forEach((p) => {
       productsHTML += `
             <tr>
-            <td><a href="" onClick="removeItem(${p.id}, ${p.price})"><i class="far fa-times-circle"></i></a></td>
+            <td><a href="" onClick="removeItem(${p.id}, ${
+        p.price
+      })"><i class="far fa-times-circle"></i></a></td>
             <td><img src="/products/${p.image}" alt=${p.name}></td>
                 <td>${p.name}</td>
                 <td>${p.price}</td>
@@ -338,37 +312,34 @@ window.onload = async () => {
             </tr>`;
     });
 
-    document.getElementById('order-table').innerHTML = productsHTML;
-
+    document.getElementById("order-table").innerHTML = productsHTML;
 
     console.log(carrito);
 
     console.log(order.items);
-
-
   }
 
-  if (currentPage === '/' || '/index.html') {
+  if (currentPage === "/" || "/index.html") {
+    const searchForm = document.getElementById("searchForm");
+    const searchResultsContainer = document.getElementById("searchResults");
 
-    const searchForm = document.getElementById('searchForm');
-    const searchResultsContainer = document.getElementById('searchResults');
-
-    searchForm.addEventListener('submit', async (event) => {
+    searchForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      const searchTerm = document.getElementById('searchInput').value;
-
+      const searchTerm = document.getElementById("searchInput").value;
 
       try {
-        const response = await fetch(`/api/search?term=${encodeURIComponent(searchTerm)}`);
+        const response = await fetch(
+          `/api/search?term=${encodeURIComponent(searchTerm)}`
+        );
         const searchResults = await response.json();
 
-        searchResultsContainer.innerHTML = '';
+        searchResultsContainer.innerHTML = "";
 
         if (searchResults.length > 0) {
-
+          window.location.href = "#searchResults";
           searchResults.forEach((product) => {
-            const productElement = document.createElement('div');
+            const productElement = document.createElement("div");
             let buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="card-button">
               <i class="fas fa-cart-plus"></i></a>`;
 
@@ -376,8 +347,7 @@ window.onload = async () => {
               buttonHTML = `<a onClick="add(${product.id}, ${product.price})" class="disabled">
                 Sin Stock</a>`;
             }
-            productElement.innerHTML =
-              `
+            productElement.innerHTML = `
             <div class="card">
             <a style="cursor:pointer" class="product-cart-link" data-id="${product.id}">
                 <img class="card-img" src="/products/${product.image}" alt="${product.name}">
@@ -393,26 +363,24 @@ window.onload = async () => {
         </div>`;
             searchResultsContainer.appendChild(productElement);
 
-            const productLinks = document.getElementsByClassName('product-cart-link');
-            Array.from(productLinks).forEach(link => {
-              link.addEventListener('click', function (event) {
-                const productId = event.currentTarget.getAttribute('data-id');
-                window.location.href = `sproduct.html?productId=${(productId)}`;
+            const productLinks =
+              document.getElementsByClassName("product-cart-link");
+            Array.from(productLinks).forEach((link) => {
+              link.addEventListener("click", function (event) {
+                const productId = event.currentTarget.getAttribute("data-id");
+                window.location.href = `sproduct.html?productId=${productId}`;
 
                 console.log(productId);
               });
             });
-
           });
         } else {
-          searchResultsContainer.innerHTML = '<p style="color:white"> :( No se encontraron resultados.</p>';
-
-
-
+          searchResultsContainer.innerHTML =
+            '<p style="color:white"> :( No se encontraron resultados.</p>';
         }
       } catch (error) {
-        console.error('Error en la solicitud de búsqueda:', error);
+        console.error("Error en la solicitud de búsqueda:", error);
       }
     });
   }
-}
+};

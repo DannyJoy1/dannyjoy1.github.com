@@ -1,261 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
-    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-    <meta name="description" content="En Microfix encontrarás todo lo que necesitas para armar tu propia PC Gamer o Profesional al mejor precio del mercado, ademas contamos con servicio técnico especializado y asesoria continua. Descubre la experiencia de tener una computadora a tu medida.">
-    <meta name="keywords" content="componentes de PC, comprar componentes de PC, Componentes de computadora, Venta de componentes PC, Tarjetas gráficas, Procesadores, SSD, PC Gamer,Tienda en línea de componentes de computadora, PC gamer Ecuador ">
-    <title>MICROFIX Componentes para tu PC Gamer al mejor precio.</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="En Microfix Ecuador encontrarás todo lo que necesitas para armar tu propia PC Gamer o Profesional al mejor precio del mercado, ademas contamos con servicio técnico especializado y asesoria continua. Descubre la experiencia de tener una computadora a tu medida."
+    />
+    <meta
+      name="keywords"
+      content="ecuador, componentes de PC Ambato, computadoras Ecuador, comprar componentes de PC en ambato ecuador, Componentes de computadora, Venta de componentes PC, Tarjetas gráficas, Procesadores, SSD, PC Gamer,Tienda en línea de componentes de computadora, PC gamer Ecuador "
+    />
+    <title>
+      MICROFIX Componentes para tu PC Gamer al mejor precio del Ecuador.
+    </title>
     <meta name="robots" content="index, follow" />
     <!-- <meta http-equiv="cache-control" content="no-cache"/> -->
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header class="header">
+      <a class="brand" href="/index.html">
+        <img src="./images/logo.png" alt="logo" class="logo" />
+      </a>
 
-        <a class="brand" href="/index.html">
-            <img src="./images/logo.png" alt="logo" class="logo">
-        </a>
+      <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Buscar..." />
+        <button class="search-box-icon btn-icon-content" type="submit">
+          <i class="search-icon">
+            <svg
+              xmlns="://www.w3.org/2000/svg"
+              version="1.1"
+              viewBox="0 0 512 512"
+            >
+              <path
+                class="icon-search"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                fill="#fff"
+              ></path>
+            </svg>
+          </i>
+        </button>
+      </form>
 
+      <a id="cart-btn"
+        ><i
+          id="checkout"
+          onClick="goToCart()"
+          class="carrito fas fa-shopping-bag"
+        ></i
+      ></a>
 
-        <form id="searchForm">
-            <input type="text" id="searchInput" placeholder="Buscar...">
-            <button class="search-box-icon btn-icon-content" type="submit"><i class="search-icon">
-                    <svg xmlns="://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
-                        <path class="icon-search"
-                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
-                            fill="#fff"></path>
-                    </svg>
-                </i></button>
-        </form>
+      <div class="nav">
+        <ul id="nav-bar" class="nav-bar">
+          <li><a href="#featured-products">Productos</a></li>
+          <li><a href="/about.html">Sobre Nosotros</a></li>
+          <li><a href="/contact.html">Contacto</a></li>
+          <a id="close"><i class="fas fa-times"></i></a>
+        </ul>
+      </div>
 
+      <div class="mobile">
+        <i id="bar-icon" class="fas fa-bars"></i>
+      </div>
 
-
-        <a id="cart-btn"><i id="checkout" onClick="goToCart()" class="carrito fas fa-shopping-bag"></i></a>
-
-
-
-        <div class="nav">
-
-
-            <ul id="nav-bar" class="nav-bar">
-
-                <li><a href="#featured-products">Productos</a></li>
-                <li><a href="/about.html">Sobre Nosotros</a></li>
-                <li><a href="/contact.html">Contacto</a></li>
-                <a id="close"><i class="fas fa-times"></i></a>
-
-            </ul>
-
-
-        </div>
-
-
-
-        <div class="mobile">
-
-            <i id="bar-icon" class=" fas fa-bars"></i>
-
-        </div>
-
-        <!-- </div> -->
+      <!-- </div> -->
     </header>
 
     <div class="wp-btn">
-        <a target="_blank" href="https://api.whatsapp.com/send?phone=593958946057&text=Ayuda"><img
-                src="./images/WhatsApp.svg.png" alt="whatsapp btn"></a>
+      <a
+        target="_blank"
+        href="https://api.whatsapp.com/send?phone=593958946057&text=Ayuda"
+        ><img src="./images/WhatsApp.svg.png" alt="whatsapp btn"
+      /></a>
     </div>
 
     <main class="main-container">
-        <div class="hero">
-            <div class="hero-card">
+      <div class="hero">
+        <div class="hero-card">
+          <div class="hero-card-1">
+            <h1>Microfix</h1>
+            <h2 class="slogan">Tu mejor aliado tecnológico</h2>
+            <p class="descr">
+              En Microfix encontrarás la solución perfecta para tus necesidades
+              tecnológicas. Ofrecemos una amplia gama de componentes
+              informáticos de alta calidad y un servicio técnico especializado
+              para garantizar un rendimiento óptimo de tus dispositivos
+            </p>
+          </div>
+          <div class="hero-card-2">
+            <img src="./images/pc-gamer.webp" alt="" />
+          </div>
+        </div>
+      </div>
 
-                <div class="hero-card-1">
-                    <h1>Microfix</h1>
-                    <h2 class="slogan">Tu mejor aliado tecnológico</h2>
-                    <p class="descr">En Microfix encontrarás la solución perfecta para tus necesidades tecnológicas.
-                        Ofrecemos una amplia gama de componentes informáticos de alta calidad y un servicio técnico
-                        especializado para garantizar un rendimiento óptimo de tus dispositivos</p>
+      <div id="searchResults"></div>
 
-                </div>
-                <div class="hero-card-2">
-                    <img src="./images/pc-gamer.webp" alt="">
+      <div class="productos">
+        <h2 class="prod-title">Productos</h2>
 
-                </div>
+        <div id="featured-products" class="product-cards"></div>
 
+        <!-- <a class="more-btn" href="/shop.html"> <button class="normal pay-btn">Más</button></a> -->
+      </div>
+
+      <div class="banner">
+        <h3>Contáctanos</h3>
+        <h2>
+          ¿Tienes dudas o necesitas mas Información?<span>Escríbenos</span> a
+          traves de WhatsApp y recibe asesoria personalizada
+        </h2>
+        <a href="https://api.whatsapp.com/send?phone=593958946057&text=Ayuda">
+          <button class="normal">WhatsApp</button></a
+        >
+      </div>
+
+      <div class="about" id="about">
+        <h2 class="about-h2">Sobre Nosotros</h2>
+        <!-- <img src="/images/logo-6.png" alt="logo microfix" class="about-img"> -->
+        <div class="about-cards">
+          <div class="about-card">
+            <i class="about-icon fas fa-tools"></i>
+            Desde nuestro inicio, nos hemos dedicado a proporcionar componentes
+            informáticos de primera calidad y un servicio técnico excepcional
+            para satisfacer las necesidades de nuestros clientes.
+          </div>
+          <div class="about-card">
+            <i class="about-icon fas fa-users"></i>
+            Nuestro equipo de expertos altamente capacitados está siempre listo
+            para brindarte asesoramiento personalizado y soluciones a medida.
+          </div>
+          <div class="about-card">
+            <i class="about-icon fas fa-cogs"></i>
+            Trabajamos con los principales fabricantes y proveedores para
+            garantizar que obtengas la mejor calidad y confiabilidad en cada
+            producto que adquieras.
+          </div>
+        </div>
+      </div>
+
+      <div class="promo">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <p class="title">ENVIOS A CUALQUIER PARTE DEL PAIS</p>
+              <i class="flip-card-icon fas fa-truck"></i>
             </div>
-        </div>
-
-
-        <div id="searchResults"></div>
-
-
-
-        <div class="productos">
-            <h2 class="prod-title">
-                Productos
-            </h2>
-
-            <div id="featured-products" class="product-cards">
-
-
-
-
+            <div class="flip-card-back">
+              <p class="title">
+                TU COMPRA A LA PUERTA DE TU CASA EN TAN SOLO 3 DÍAS
+              </p>
             </div>
-
-
-            <!-- <a class="more-btn" href="/shop.html"> <button class="normal pay-btn">Más</button></a> -->
-
+          </div>
         </div>
+      </div>
 
-        <div class="banner">
-            <h3>Somos tus socios mayoristas</h3>
-            <h2>¡Recibe un <span>descuento</span> exclusivo por compras a partir de 3 unidades! </h2>
-            <a href="/index.html#featured-products"> <button class="normal">Comprar</button></a>
+      <div id="servicios" class="servicios">
+        <!-- <img class="serv-fondo" src="/images/fondo card.png" alt="fondo gamer"> -->
+        <h2 class="servs">Servicios</h2>
+        <div class="div serv-cards">
+          <div class="serv-card serv-card-1">
+            <img src="./images/ahorro.webp" alt="img" class="serv-card" />
 
-        </div>
-
-        <div class="about" id="about">
-            <h2 class="about-h2">Sobre Nosotros</h2>
-            <!-- <img src="/images/logo-6.png" alt="logo microfix" class="about-img"> -->
-            <div class="about-cards">
-                <div class="about-card">
-                    <i class=" about-icon fas fa-tools"></i>
-                    Desde nuestro inicio, nos hemos dedicado a proporcionar componentes informáticos de primera calidad
-                    y un servicio técnico excepcional para satisfacer las necesidades de nuestros clientes.
-
-                </div>
-                <div class="about-card">
-                    <i class=" about-icon fas fa-users"></i>
-                    Nuestro equipo de expertos altamente capacitados está siempre listo para brindarte asesoramiento
-                    personalizado y soluciones a medida.
-
-                </div>
-                <div class="about-card">
-                    <i class="about-icon fas fa-cogs"></i>
-                    Trabajamos con los principales fabricantes y proveedores para garantizar que obtengas la mejor
-                    calidad y confiabilidad en cada producto que adquieras.
-
-                </div>
-
+            <div class="serv">
+              <h2 class="asesoria">Componentes de PC al mejor precio</h2>
+              <p class="serv-text">
+                Los componentes de las marcas mas reconocidas al mejor precio
+                que podrás encontrar.
+              </p>
             </div>
+          </div>
 
-        </div>
+          <div class="serv-card serv-card-3">
+            <img
+              src="./images/servicio-tecnico-1.png"
+              alt=""
+              class="serv-card"
+            />
 
-        <div class="promo">
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <p class="title">ENVIOS A CUALQUIER PARTE DEL PAIS </p>
-                        <i class="flip-card-icon fas fa-truck"></i>
-                    </div>
-                    <div class="flip-card-back">
-                        <p class="title">TU COMPRA A LA PUERTA DE TU CASA EN TAN SOLO 3 DÍAS</p>
-
-                    </div>
-                </div>
+            <div class="serv">
+              <h2 class="servicio-tec">Servicio Técnico</h2>
+              <p class="serv-text">
+                Profesionales del mas alto nivel, se encargan de que tus
+                dispositivos trabajen al 100.
+              </p>
             </div>
-        </div>
-
-
-        <div id="servicios" class="servicios">
-            <!-- <img class="serv-fondo" src="/images/fondo card.png" alt="fondo gamer"> -->
-            <h2 class="servs">Servicios</h2>
-            <div class="div serv-cards">
-                <div class="serv-card serv-card-1">
-                    <img src="./images/ahorro.webp" alt="img" class="serv-card">
-
-                    <div class="serv">
-                        <h2 class="asesoria">Componentes de PC al mejor precio</h2>
-                        <p class="serv-text">Los componentes de las marcas mas reconocidas al mejor precio que podrás
-                            encontrar.</p>
-                    </div>
-
-                </div>
-
-                <div class="serv-card serv-card-3">
-                    <img src="./images/servicio-tecnico-1.png" alt="" class="serv-card">
-
-                    <div class="serv">
-
-                        <h2 class="servicio-tec">
-                            Servicio Técnico
-                        </h2>
-                        <p class="serv-text">Profesionales del mas alto nivel, se encargan de que tus dispositivos
-                            trabajen al 100. </p>
-                    </div>
-
-                </div>
-                <div class="serv-card serv-card-4">
-                    <img src="./images/delivery.webp" alt="" class="serv-card">
-                    <div class="serv">
-                        <h2 class="entrega">Entregas a todo el Pais</h2>
-                        <p class="serv-text">Hacemos envios a todo el Ecuador a traves de Servientrega.</p>
-                    </div>
-
-
-                </div>
-                <div class="serv-card serv-card-5">
-                    <img src="./images/socios.png" alt="" class="serv-card">
-                    <div class="serv">
-                        <h2 class="entrega">Somos tus Proveedores</h2>
-                        <p class="serv-text">Trabaja con nosotros y obten un descuento para distribuidores.</p>
-                    </div>
-                </div>
-                <div class="serv-card serv-card-6">
-                    <img src="./images/garantia.webp" alt="" class="serv-card">
-
-                    <div class="serv">
-                        <h2 class="entrega">Garantía</h2>
-                        <p class="serv-text">Todos nuestros prouctos ceuntan con garantía</p>
-                    </div>
-
-                </div>
-
+          </div>
+          <div class="serv-card serv-card-4">
+            <img src="./images/delivery.webp" alt="" class="serv-card" />
+            <div class="serv">
+              <h2 class="entrega">Entregas a todo el Pais</h2>
+              <p class="serv-text">
+                Hacemos envios a todo el Ecuador a traves de Servientrega.
+              </p>
             </div>
+          </div>
+          <div class="serv-card serv-card-5">
+            <img src="./images/socios.png" alt="" class="serv-card" />
+            <div class="serv">
+              <h2 class="entrega">Somos tus Proveedores</h2>
+              <p class="serv-text">
+                Trabaja con nosotros y obten un descuento para distribuidores.
+              </p>
+            </div>
+          </div>
+          <div class="serv-card serv-card-6">
+            <img src="./images/garantia.webp" alt="" class="serv-card" />
+
+            <div class="serv">
+              <h2 class="entrega">Garantía</h2>
+              <p class="serv-text">
+                Todos nuestros prouctos ceuntan con garantía
+              </p>
+            </div>
+          </div>
         </div>
-
-
+      </div>
     </main>
 
     <footer class="footer">
-
-        <div class="footer-info">
-            <div class="col">
-                <img class="footer-logo" src="./images/logo.png" alt="footer logo">
-                <h4>Contacto</h4>
-                <p> <strong>Email:</strong> microfixec@gmail.com</p>
-                <p> <strong>Whatsapp:</strong> 0958946057</p>
-                <p> <strong> Dirección:</strong> Ambato, Matheu y Cazadores</p>
-                <p> <strong> Horario:</strong> Lunes a Sabado de 9:00 am a 19:00 pm</p>
-                <div class="follow">
-                    <h4>Siguenos</h4>
-                    <div class="social-icon">
-                        <a href="https://www.facebook.com/microfix1/" target="_blank"><i
-                                class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/microfix.ec/"><i class="fab fa-instagram"></i></a>
-                        <i class="fab fa-tiktok"></i>
-                    </div>
-                </div>
+      <div class="footer-info">
+        <div class="col">
+          <img class="footer-logo" src="./images/logo.png" alt="footer logo" />
+          <h4>Contacto</h4>
+          <p><strong>Email:</strong> microfixec@gmail.com</p>
+          <p><strong>Whatsapp:</strong> 0958946057</p>
+          <p><strong> Dirección:</strong> Ambato, Matheu y Cazadores</p>
+          <p><strong> Horario:</strong> Lunes a Sabado de 9:00 am a 19:00 pm</p>
+          <div class="follow">
+            <h4>Siguenos</h4>
+            <div class="social-icon">
+              <a href="https://www.facebook.com/microfix1/" target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/microfix.ec/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <i class="fab fa-tiktok"></i>
             </div>
-            <div class="col">
-                <h4>Sobre Nosotros</h4>
-                <a href="./about.html">Sobre Nosotros</a>
-                <a href="./info.html">Información de Envíos</a>
-                <a href="./contact.html">Contacto</a>
-                <a href="./info.html">¿Cómo comprar?</a>
+          </div>
+        </div>
+        <div class="col">
+          <h4>Sobre Nosotros</h4>
+          <a href="./about.html">Sobre Nosotros</a>
+          <a href="./info.html">Información de Envíos</a>
+          <a href="./contact.html">Contacto</a>
+          <a href="./info.html">¿Cómo comprar?</a>
+        </div>
 
-
-
-            </div>
-
-            <!-- <div class="col">
+        <!-- <div class="col">
             <h4>Mi Cuenta</h4>
             <a href="/#/">Ingresar</a>
             <a href="/#/">Ver Carrito</a>
@@ -263,37 +263,19 @@
             <a href="/#/">Ayuda</a>
         </div> -->
 
-
-
-            <div class="col paid-methods">
-                <h4>Metodos de Pago</h4>
-                <p>Transferencia Bancaria</p>
-                <p>Banco Pichincha</p>
-                <p>Banco del Pacífico</p>
-                <p>Cooperativa Oscus </p>
-                <p>Cooperativa San Francisco </p>
-
-
-            </div>
+        <div class="col paid-methods">
+          <h4>Metodos de Pago</h4>
+          <p>Transferencia Bancaria</p>
+          <p>Banco Pichincha</p>
+          <p>Banco del Pacífico</p>
+          <p>Cooperativa Oscus</p>
+          <p>Cooperativa San Francisco</p>
         </div>
-        <div class="copyrigth">
-            <p> © 2023, Made by Ing. Danny Merino</p>
-        </div>
-
-
-
+      </div>
+      <div class="copyrigth">
+        <p>© 2023, Made by Ing. Danny Merino</p>
+      </div>
     </footer>
-    <script src="./script.js">
-
-
-
-
-    </script>
-
-
-
-
-
-</body>
-
+    <script src="./script.js"></script>
+  </body>
 </html>
