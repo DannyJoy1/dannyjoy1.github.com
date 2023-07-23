@@ -220,6 +220,7 @@ function displayProducts() {
 async function displayProductDetails() {
   const productDetailsContainer = document.getElementById("prod-details");
   if (productDetailsContainer) {
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const productId = urlParams.get("productId");
@@ -232,7 +233,6 @@ async function displayProductDetails() {
       let productDetailsHTML = "";
 
       matchedProducts.forEach((p) => {
-        console.log(p.stock);
 
         let detButtonHTML = "";
 
@@ -253,7 +253,7 @@ async function displayProductDetails() {
 
         <div class="sprod-details">
                 <h6>Producto</h6>
-                <h2 id="productName"></h2>${p.name}</h2>
+                <h2 id="productName">${p.name}</h2>
                 <h3 id="productPrice">$${p.price}</h3>
                 ${detButtonHTML}
                 <h4>Detalles del Producto</h4>
@@ -263,6 +263,7 @@ async function displayProductDetails() {
             </div>
 
         `;
+        document.title = `${p.name} - Microfix Ecuador`;
       });
 
       productDetailsContainer.innerHTML = productDetailsHTML;

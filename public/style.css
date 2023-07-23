@@ -627,7 +627,7 @@ svg {
   font-size: 4.5rem;
 }
 
-button.normal {
+a.normal {
   font-size: 14px;
   font-weight: 600;
   padding: 15px 30px;
@@ -637,9 +637,10 @@ button.normal {
   cursor: pointer;
   outline: none;
   transition: 0.2s;
+  text-decoration: none;
 }
 
-.banner button:hover {
+.banner a:hover, .hero-card a:hover {
   background-color: #5cc1af;
   color: white;
 }
