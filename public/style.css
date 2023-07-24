@@ -196,7 +196,7 @@ header {
 }
 
 .hero {
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -240,7 +240,7 @@ header {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 8rem;
   padding: 1rem;
 }
 
@@ -252,7 +252,7 @@ h1 {
 }
 
 .descr {
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 1rem;
 }
 
@@ -507,10 +507,6 @@ h1 {
   object-fit: contain;
 }
 
-.card-info {
-  /* padding-top: 1rem; */
-}
-
 svg {
   width: 20px;
   height: 20px;
@@ -606,11 +602,11 @@ svg {
   margin: 40px 0;
   background-image: url(./images/banner-g.webp);
   width: 100%;
-  height: 40vh;
   background-size: cover;
   background-position: center;
   color: white;
   font-size: 2.5rem;
+  padding: 2rem 0;
 }
 
 .banner h3 {
@@ -627,7 +623,7 @@ svg {
   font-size: 4.5rem;
 }
 
-a.normal {
+a.normal, button.normal {
   font-size: 14px;
   font-weight: 600;
   padding: 15px 30px;
@@ -636,11 +632,15 @@ a.normal {
   border-radius: 4px;
   cursor: pointer;
   outline: none;
-  transition: 0.2s;
+  transition: 0.2s ease all;
   text-decoration: none;
 }
 
-.banner a:hover, .hero-card a:hover {
+.banner a:active, .hero-card a:active, button.normal:active {
+  transform: scale(0.9);
+}
+
+.banner a:hover, .hero-card a:hover, button.normal:hover {
   background-color: #5cc1af;
   color: white;
 }
@@ -853,6 +853,23 @@ footer {
   background-color: #5cc1af;
   color: white;
   border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all ease 0.2s;
+
+}
+
+.prod-details .sprod-details button:hover{
+  background-color: white;
+  color: #5cc1af;
+  border: solid 1px #5cc1af;
+
+}
+
+.prod-details .sprod-details button:active{
+transform: scale(.9);
 }
 
 .prod-details .sprod-details input:focus {
@@ -1652,8 +1669,18 @@ footer {
 }
 
 @media (max-width: 850px) {
+
+  .hero-card{
+    text-align: center;
+    height: auto;
+  }
+
   .logo {
     height: 4rem;
+  }
+
+  .descr{
+    font-size: 2.5rem;
   }
 
   .nav-bar {
@@ -1824,6 +1851,12 @@ footer {
 } */
 
 @media (max-width: 477px) {
+.header{
+  justify-content: space-between;
+}
+.logo{
+  height: 3rem;
+}
   .prod-details {
     display: flex;
     flex-direction: column;
@@ -1833,6 +1866,14 @@ footer {
     width: 100%;
     padding-top: 5rem;
     color: blue;
+  }
+
+  .slogan{
+    font-size: 3rem;
+  }
+
+  .descr{
+    font-size: 2rem;
   }
 
   .prod-details .sprod-img {
@@ -1861,6 +1902,8 @@ footer {
 }
 
 @media (max-width: 360px) {
+
+
   .nav-bar {
     display: flex;
     flex-direction: column;
@@ -1906,5 +1949,11 @@ footer {
   .logos-bancos {
     width: 250px;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 321px) {
+  .hero-card-1 h1{
+    font-size: 6rem;
   }
 }

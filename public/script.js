@@ -238,10 +238,10 @@ async function displayProductDetails() {
 
         if (p.stock <= 0) {
           detButtonHTML = `
-    <button id="add-cart-sproduct" class="normal" disabled>Sin Stock</button>`;
+    <button id="add-cart-sproduct" class="normal-btn" disabled>Sin Stock <i class="fas fa-cart-plus"></i></button>`;
         } else {
           detButtonHTML = `
-    <button onClick="add(${p.id}, ${p.price})" id="add-cart-sproduct" class="normal">Agregar al Carrito</button>`;
+    <button onClick="add(${p.id}, ${p.price})" id="add-cart-sproduct" class="normal-btn">Agregar al Carrito <i class="fas fa-cart-plus"></i></button>`;
         }
 
         productDetailsHTML += `
